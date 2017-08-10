@@ -11,7 +11,6 @@ namespace EventoFactory.Models
 {
     using System;
     using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
     
     public partial class Usuarios
     {
@@ -23,7 +22,6 @@ using System.ComponentModel.DataAnnotations;
     
         public int ID_Usuario { get; set; }
         public string Nome { get; set; }
-        [Required("Você precisa informar o usuario!")]
         public string Usuario { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
