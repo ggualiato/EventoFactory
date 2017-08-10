@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0f9aede92b2d413fa391f5d37b11d43f" Name="Diagram1">
+        <EntityTypeShape EntityType="ServidorEventoModel.Compras" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServidorEventoModel.Eventos" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServidorEventoModel.Feedbacks" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServidorEventoModel.Ingressos" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServidorEventoModel.Locais" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServidorEventoModel.Usuarios" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="ServidorEventoModel.FK_Compras_ID_Ingresso" ManuallyRouted="false" />
+        <AssociationConnector Association="ServidorEventoModel.FK_Compras_ID_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ServidorEventoModel.FK_Eventos_ID_Ingresso" ManuallyRouted="false" />
+        <AssociationConnector Association="ServidorEventoModel.FK_Eventos_ID_Local" ManuallyRouted="false" />
+        <AssociationConnector Association="ServidorEventoModel.FK_Feedbacks_ID_Evento" ManuallyRouted="false" />
+        <AssociationConnector Association="ServidorEventoModel.FK_Feedbacks_ID_Usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
