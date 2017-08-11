@@ -1,0 +1,60 @@
+body {
+
+}
+.ciano{
+color:#00BFFF;
+}
+
+body, header{
+	background-color: #333;
+}
+
+#bt_entrar{
+	padding-left: 0px;
+}
+
+#txt_login, #txt_senha{
+
+background-color: #333;
+border: none;
+font: 12px verdana, arial, sans-serif;
+}
+
+#jumb-eventos{
+	background-color: #222222;
+	color: #ee9a02;
+	margin: 15px;
+}
+
+#container-jumb-eventos{
+	padding: 0px;
+}
+
+#sobrenos{
+	background-color: #222222;
+	color: #ee9a02;
+	padding: 10px;
+	margin: 15px;
+}
+
+#paragrafo-sobrenos{
+	font: 14px verdana, arial, sans-serif;
+	color: #FFF;
+	padding-top: 10px; 
+}
+
+footer{
+    font: 14px verdana, arial, sans-serif;
+    color:#FFF;
+    padding: 20px;
+    text-align: center;
+    background-color: #222222;
+}
+
+footer address:first-child {
+ margin-bottom: 0;
+}
+
+footer address:last-child {
+ margin-bottom: 0;
+}
