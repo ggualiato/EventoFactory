@@ -21,7 +21,7 @@ namespace EventoFactory.Models
     
         public int ID_Evento { get; set; }
         public string Nome { get; set; }
-        public Nullable<int> Capacidade { get; set; }
+        public int Capacidade { get; set; }
         public string Descricao { get; set; }
         public int ID_Local { get; set; }
         public int ID_Ingresso { get; set; }
