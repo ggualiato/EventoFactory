@@ -33,7 +33,7 @@
                             <!-- Aqui abre caixinha de dialogo -->
                             <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-sm">
-                                    <div class="modal-content" style="padding-bottom: 30px; background-color: #FFFFE0 ">
+                                    <div class="modal-content" style="padding-bottom: 30px; background-color: #FFFFE0">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="row">
@@ -47,6 +47,7 @@
                                                     <div class="row">
 
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
+                                                            <div class="glyphicon glyphicon-user"></div>
                                                             <label for="Nome">Nome do titular: </label>
                                                             <br />
                                                             <input type="text" class="modal-content" />
@@ -55,6 +56,7 @@
                                                     <!-- Numero do cartão -->
                                                     <div class="row">
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
+                                                            <div class="glyphicon glyphicon-credit-card"></div>
                                                             <label for="numero">Numero do cartão: </label>
                                                             <br />
                                                             <input type="text" class="modal-content" id="numeroDoCartao" />
@@ -62,10 +64,11 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-12">
+                                                            <div class="glyphicon glyphicon-calendar"></div>
                                                             <label for="vencimento">Vencimento do cartão:</label>
                                                         </div>
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
-                                                            <select name="mes" id="CaixaMes" style="border-radius:5px;">
+                                                            <select name="mes" id="CaixaMes" style="border-radius: 5px;">
                                                                 <option value="" disabled selected>MM</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -101,8 +104,24 @@
 
                                                         <div class="row" style="margin-bottom: 15px;">
                                                             <div class="col-md-12">
+                                                                <div class=	"glyphicon glyphicon-lock"></div>
                                                                 <label for="cvc">Codigo de segurança: </label>
-                                                                <input type="text" name="cvc" id="codigo" min="100" max="999" placeholder="CVC" style="border-radius: 5px; width: 37px;" />
+                                                                <input type="text" name="cvc" id="codigo" placeholder="CVC" style="border-radius: 5px; width: 37px;" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin-bottom: 15px;">
+                                                            <div class="col-md-12">
+                                                                
+                                                                <label for="quantidade">Quantidade: </label>
+                                                                <input type="number" min="1" max="10" style="border-radius: 10px; width: 40px;" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin-bottom: 15px;">
+                                                            <div class="col-md-12">
+                                                                <div class="glyphicon glyphicon-piggy-bank">
+
+                                                                </div>
+                                                                <label for="preco">Total: R$ </label>
                                                             </div>
                                                         </div>
                                                         <div class="row" style="margin-bottom: 15px;">
@@ -142,10 +161,9 @@
 
 @section Scripts {
     <script>
-        $(document).ready(function()
-        {
+        $(document).ready(function () {
             $("#numeroDoCartao").inputmask("mask", { "mask": "9999-9999-9999-9999" });
             $("#codigo").inputmask("mask", { "mask": "999" });
-    });
+        });
     </script>
 }
