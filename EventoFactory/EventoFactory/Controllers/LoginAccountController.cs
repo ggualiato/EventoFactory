@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EventoFactory.Models;
 
 namespace EventoFactory.Controllers
 {
@@ -11,9 +12,13 @@ namespace EventoFactory.Controllers
         //
         // GET: /Login/
 
-        public ActionResult Login()
+        /// <param name="returnURL"></param>
+        /// <returns></returns>
+        public ActionResult Login(string returnURL)
         {
-            return View();
+            /*Recebe a url que o usuário tentou acessar*/
+            ViewBag.ReturnUrl = returnURL;
+            return View(new Usuarios());
         }
 
     }

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ServidorEventoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ServidorEventoEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Compras" EntityType="ServidorEventoModel.Compras" />
+    <EntitySet Name="Eventos" EntityType="ServidorEventoModel.Eventos" />
+    <EntitySet Name="Feedbacks" EntityType="ServidorEventoModel.Feedbacks" />
+    <EntitySet Name="Ingressos" EntityType="ServidorEventoModel.Ingressos" />
+    <EntitySet Name="Locais" EntityType="ServidorEventoModel.Locais" />
+    <EntitySet Name="Usuarios" EntityType="ServidorEventoModel.Usuarios" />
+    <AssociationSet Name="FK_Compras_ID_Ingresso" Association="ServidorEventoModel.FK_Compras_ID_Ingresso">
+      <End Role="Ingressos" EntitySet="Ingressos" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compras_ID_Usuario" Association="ServidorEventoModel.FK_Compras_ID_Usuario">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Eventos_ID_Local" Association="ServidorEventoModel.FK_Eventos_ID_Local">
+      <End Role="Locais" EntitySet="Locais" />
+      <End Role="Eventos" EntitySet="Eventos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Feedbacks_ID_Evento" Association="ServidorEventoModel.FK_Feedbacks_ID_Evento">
+      <End Role="Eventos" EntitySet="Eventos" />
+      <End Role="Feedbacks" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ingressos_ID_Evento" Association="ServidorEventoModel.FK_Ingressos_ID_Evento">
+      <End Role="Eventos" EntitySet="Eventos" />
+      <End Role="Ingressos" EntitySet="Ingressos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Feedbacks_ID_Usuario" Association="ServidorEventoModel.FK_Feedbacks_ID_Usuario">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Feedbacks" EntitySet="Feedbacks" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="ID_Compra" />
+    </Key>
+    <Property Name="ID_Compra" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="ID_Ingresso" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ingressos" Relationship="ServidorEventoModel.FK_Compras_ID_Ingresso" FromRole="Compras" ToRole="Ingressos" />
+    <NavigationProperty Name="Usuarios" Relationship="ServidorEventoModel.FK_Compras_ID_Usuario" FromRole="Compras" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Eventos">
+    <Key>
+      <PropertyRef Name="ID_Evento" />
+    </Key>
+    <Property Name="ID_Evento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Capacidade" Type="Int32" />
+    <Property Name="Descricao" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ID_Local" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Locais" Relationship="ServidorEventoModel.FK_Eventos_ID_Local" FromRole="Eventos" ToRole="Locais" />
+    <NavigationProperty Name="Feedbacks" Relationship="ServidorEventoModel.FK_Feedbacks_ID_Evento" FromRole="Eventos" ToRole="Feedbacks" />
+    <NavigationProperty Name="Ingressos" Relationship="ServidorEventoModel.FK_Ingressos_ID_Evento" FromRole="Eventos" ToRole="Ingressos" />
+  </EntityType>
+  <EntityType Name="Feedbacks">
+    <Key>
+      <PropertyRef Name="ID_Feedback" />
+    </Key>
+    <Property Name="ID_Feedback" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nota" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Comentario" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="ID_Evento" Type="Int32" Nullable="false" />
+    <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Eventos" Relationship="ServidorEventoModel.FK_Feedbacks_ID_Evento" FromRole="Feedbacks" ToRole="Eventos" />
+    <NavigationProperty Name="Usuarios" Relationship="ServidorEventoModel.FK_Feedbacks_ID_Usuario" FromRole="Feedbacks" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Ingressos">
+    <Key>
+      <PropertyRef Name="ID_Ingresso" />
+    </Key>
+    <Property Name="ID_Ingresso" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Preco" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Quantidade_Inicial" Type="Int32" Nullable="false" />
+    <Property Name="QTD_Vendida" Type="Int32" />
+    <Property Name="ID_Evento" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Compras" Relationship="ServidorEventoModel.FK_Compras_ID_Ingresso" FromRole="Ingressos" ToRole="Compras" />
+    <NavigationProperty Name="Eventos" Relationship="ServidorEventoModel.FK_Ingressos_ID_Evento" FromRole="Ingressos" ToRole="Eventos" />
+  </EntityType>
+  <EntityType Name="Locais">
+    <Key>
+      <PropertyRef Name="ID_Local" />
+    </Key>
+    <Property Name="ID_Local" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Endereco" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Numero" Type="Int32" />
+    <Property Name="Bairro" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CEP" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Descricao" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Eventos" Relationship="ServidorEventoModel.FK_Eventos_ID_Local" FromRole="Locais" ToRole="Eventos" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="ID_Usuario" />
+    </Key>
+    <Property Name="ID_Usuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Senha" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Perfil" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Compras" Relationship="ServidorEventoModel.FK_Compras_ID_Usuario" FromRole="Usuarios" ToRole="Compras" />
+    <NavigationProperty Name="Feedbacks" Relationship="ServidorEventoModel.FK_Feedbacks_ID_Usuario" FromRole="Usuarios" ToRole="Feedbacks" />
+  </EntityType>
+  <Association Name="FK_Compras_ID_Ingresso">
+    <End Role="Ingressos" Type="ServidorEventoModel.Ingressos" Multiplicity="1" />
+    <End Role="Compras" Type="ServidorEventoModel.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingressos">
+        <PropertyRef Name="ID_Ingresso" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="ID_Ingresso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compras_ID_Usuario">
+    <End Role="Usuarios" Type="ServidorEventoModel.Usuarios" Multiplicity="1" />
+    <End Role="Compras" Type="ServidorEventoModel.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="ID_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Eventos_ID_Local">
+    <End Role="Locais" Type="ServidorEventoModel.Locais" Multiplicity="1" />
+    <End Role="Eventos" Type="ServidorEventoModel.Eventos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locais">
+        <PropertyRef Name="ID_Local" />
+      </Principal>
+      <Dependent Role="Eventos">
+        <PropertyRef Name="ID_Local" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Feedbacks_ID_Evento">
+    <End Role="Eventos" Type="ServidorEventoModel.Eventos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Feedbacks" Type="ServidorEventoModel.Feedbacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Eventos">
+        <PropertyRef Name="ID_Evento" />
+      </Principal>
+      <Dependent Role="Feedbacks">
+        <PropertyRef Name="ID_Evento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ingressos_ID_Evento">
+    <End Role="Eventos" Type="ServidorEventoModel.Eventos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Ingressos" Type="ServidorEventoModel.Ingressos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Eventos">
+        <PropertyRef Name="ID_Evento" />
+      </Principal>
+      <Dependent Role="Ingressos">
+        <PropertyRef Name="ID_Evento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Feedbacks_ID_Usuario">
+    <End Role="Usuarios" Type="ServidorEventoModel.Usuarios" Multiplicity="1" />
+    <End Role="Feedbacks" Type="ServidorEventoModel.Feedbacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="Feedbacks">
+        <PropertyRef Name="ID_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

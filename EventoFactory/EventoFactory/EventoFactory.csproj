@@ -124,6 +124,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginAccountController.cs" />
@@ -131,37 +132,38 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Compras.cs">
-      <DependentUpon>EventoFactoryDB.tt</DependentUpon>
+      <DependentUpon>EventoFactory.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EventoFactoryDB.Context.cs">
+    <Compile Include="Models\EventoFactory.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EventoFactoryDB.Context.tt</DependentUpon>
+      <DependentUpon>EventoFactory.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EventoFactoryDB.cs">
+    <Compile Include="Models\EventoFactory.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EventoFactoryDB.tt</DependentUpon>
+      <DependentUpon>EventoFactory.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EventoFactoryDB.Designer.cs">
+    <Compile Include="Models\EventoFactory.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EventoFactoryDB.edmx</DependentUpon>
+      <DependentUpon>EventoFactory.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Eventos.cs">
-      <DependentUpon>EventoFactoryDB.tt</DependentUpon>
+      <DependentUpon>EventoFactory.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedbacks.cs">
-      <DependentUpon>EventoFactoryDB.tt</DependentUpon>
+      <DependentUpon>EventoFactory.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingressos.cs">
-      <DependentUpon>EventoFactoryDB.tt</DependentUpon>
+      <DependentUpon>EventoFactory.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Locais.cs">
-      <DependentUpon>EventoFactoryDB.tt</DependentUpon>
+      <DependentUpon>EventoFactory.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Usuarios.cs">
-      <DependentUpon>EventoFactoryDB.tt</DependentUpon>
+      <DependentUpon>EventoFactory.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -232,22 +234,22 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <EntityDeploy Include="Models\EventoFactoryDB.edmx">
+    <EntityDeploy Include="Models\EventoFactory.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EventoFactoryDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>EventoFactory.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EventoFactoryDB.Context.tt">
+    <Content Include="Models\EventoFactory.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EventoFactoryDB.edmx</DependentUpon>
-      <LastGenOutput>EventoFactoryDB.Context.cs</LastGenOutput>
+      <DependentUpon>EventoFactory.edmx</DependentUpon>
+      <LastGenOutput>EventoFactory.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\EventoFactoryDB.edmx.diagram">
-      <DependentUpon>EventoFactoryDB.edmx</DependentUpon>
+    <Content Include="Models\EventoFactory.edmx.diagram">
+      <DependentUpon>EventoFactory.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\EventoFactoryDB.tt">
+    <Content Include="Models\EventoFactory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EventoFactoryDB.edmx</DependentUpon>
-      <LastGenOutput>EventoFactoryDB.cs</LastGenOutput>
+      <DependentUpon>EventoFactory.edmx</DependentUpon>
+      <LastGenOutput>EventoFactory.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -320,6 +322,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\LoginAccount\Login.cshtml" />
     <Content Include="Views\Evento\Eventos.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
