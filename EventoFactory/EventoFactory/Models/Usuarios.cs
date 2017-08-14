@@ -25,7 +25,7 @@ namespace EventoFactory.Models
         public string Usuario { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
-        public bool Perfil { get; set; }
+        public string Perfil { get; set; }
     
         public virtual ICollection<Compras> Compras { get; set; }
         public virtual ICollection<Feedbacks> Feedbacks { get; set; }

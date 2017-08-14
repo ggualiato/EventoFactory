@@ -13,10 +13,10 @@ namespace EventoFactory.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ServidorEventoEntities : DbContext
+    public partial class ServidorEventoEntities1 : DbContext
     {
-        public ServidorEventoEntities()
-            : base("name=ServidorEventoEntities")
+        public ServidorEventoEntities1()
+            : base("name=ServidorEventoEntities1")
         {
         }
     
