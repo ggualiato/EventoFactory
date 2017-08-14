@@ -4,6 +4,10 @@ body {
 .ciano{
 color:#00BFFF;
 }
+.margem {
+
+    margin-left:50px;
+}
 
 body, header{
 	background-color: #333;
@@ -57,4 +61,8 @@ footer address:first-child {
 
 footer address:last-child {
  margin-bottom: 0;
+}
+
+.cursive {
+    font-family: cursive;
 }

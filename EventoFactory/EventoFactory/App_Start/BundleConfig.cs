@@ -38,6 +38,15 @@ namespace EventoFactory
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
+                    "~/Scripts/inputmask/inputmask.js",
+                    "~/Scripts/inputmask/jquery.inputmask.js",
+                                "~/Scripts/inputmask/inputmask.extensions.js",
+                                "~/Scripts/inputmask/inputmask.date.extensions.js",
+                                "~/Scripts/inputmask/inputmask.numeric.extensions.js"));
+
         }
     }
 }
