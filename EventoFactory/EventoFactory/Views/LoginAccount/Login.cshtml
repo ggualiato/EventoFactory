@@ -10,7 +10,7 @@
   <script src="scripts/jquery-1.9.1.js"></script>
   <script src="scripts/bootstrap.min.js"></script>*@
 
-@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" })) {
+@using (Html.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" })) {
     @Html.AntiForgeryToken();
    
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
