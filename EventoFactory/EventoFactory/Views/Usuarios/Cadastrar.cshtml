@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Cadastre-se";
+}
+
+@model EventoFactory.Models.Usuarios
+
+@using (Html.BeginForm("Cadastrar", "Usuarios", FormMethod.Post))
+{
+    
+    @ViewBag.Mensagem;
+        
+    <div class="container">
+        <h2><font class="ciano">Cadastre-se</font></h2>
+
+        <fieldset>
+            <legend><font class="ciano">Usuario</font></legend>
+
+            <form class="ciano">
+                <div class="ciano">
+
+                    <div class="form-group">
+                        <div>
+                            @Html.ValidationMessageFor(x => x.Email)
+                        </div>
+
+                        @Html.LabelFor(x => x.Email)
+                        <input type="@Html.EditorFor(x => x.Email)" class="form-control" placeholder="Email">
+                    </div>
+                    <div>
+                        <div>
+                            @Html.ValidationMessageFor(x => x.Nome)
+                        </div>
+                        @Html.LabelFor(x => x.Nome)
+                        <input type="@Html.EditorFor(x => x.Nome)" class="form-control" placeholder="Nome">
+                    </div>
+                    <div>
+                        <div>
+                            @Html.ValidationMessageFor(x => x.Usuario)
+                        </div>
+
+                        @Html.LabelFor(x => x.Usuario)
+                        <input type="@Html.EditorFor(x => x.Usuario)" class="form-control" placeholder="Usuario">
+                    </div>
+                    <div>
+                        <div>
+                            @Html.ValidationMessageFor(x => x.Senha)
+                        </div>
+
+                        @Html.LabelFor(x => x.Senha)
+                        <input type="@Html.EditorFor(x => x.Senha)" class="form-control" placeholder="Senha">
+                    </div>
+
+                </div>
+
+                <p>
+                    <input type="submit" value="Enviar" class="form-control">
+                </p>
+
+
+            </form>
+        </fieldset>
+    </div>
+}
+
+

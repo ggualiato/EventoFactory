@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace EventoFactory.Models
 {
     using System;
@@ -21,10 +23,16 @@ namespace EventoFactory.Models
         }
     
         public int ID_Usuario { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]     
         public string Nome { get; set; }
+
         public string Usuario { get; set; }
+            
         public string Senha { get; set; }
+       
         public string Email { get; set; }
+
         public string Perfil { get; set; }
     
         public virtual ICollection<Compras> Compras { get; set; }
