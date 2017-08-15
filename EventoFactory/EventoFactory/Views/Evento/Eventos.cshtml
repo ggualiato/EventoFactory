@@ -43,14 +43,14 @@
                                                     </div>
                                                 </div>
                                                 <!-- Nome do titular -->
-                                                <form name="pagamento">
+                                                <form name="pagamento" action="@Url.Action("Historico", "Historico")">
                                                     <div class="row">
 
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
                                                             <div class="glyphicon glyphicon-user"></div>
                                                             <label for="Nome">Nome do titular: </label>
                                                             <br />
-                                                            <input type="text" class="modal-content" />
+                                                            <input type="text" class="modal-content" required />
                                                         </div>
                                                     </div>
                                                     <!-- Numero do cartão -->
@@ -59,16 +59,17 @@
                                                             <div class="glyphicon glyphicon-credit-card"></div>
                                                             <label for="numero">Numero do cartão: </label>
                                                             <br />
-                                                            <input type="text" class="modal-content" id="numeroDoCartao" />
+                                                            <input type="text" class="modal-content" id="numeroDoCartao" required />
                                                         </div>
                                                     </div>
+                                                    <!-- Vencimento do cartão -->
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="glyphicon glyphicon-calendar"></div>
                                                             <label for="vencimento">Vencimento do cartão:</label>
                                                         </div>
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
-                                                            <select name="mes" id="CaixaMes" style="border-radius: 5px;">
+                                                            <select name="mes" id="CaixaMes" style="border-radius: 5px;" required>
                                                                 <option value="" disabled selected>MM</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -84,7 +85,7 @@
                                                                 <option value="12">12</option>
                                                             </select>
 
-                                                            <select name="ano" id="CaixaAno" style="border-radius: 5px;">
+                                                            <select name="ano" id="CaixaAno" style="border-radius: 5px;" required>
                                                                 <option value="" disabled selected>AA</option>
                                                                 <option value="17">17</option>
                                                                 <option value="18">18</option>
@@ -101,34 +102,37 @@
                                                             </select>
 
                                                         </div>
-
+                                                        <!-- Código de segurança -->
                                                         <div class="row" style="margin-bottom: 15px;">
                                                             <div class="col-md-12">
-                                                                <div class=	"glyphicon glyphicon-lock"></div>
+                                                                <div class="glyphicon glyphicon-lock"></div>
                                                                 <label for="cvc">Codigo de segurança: </label>
-                                                                <input type="text" name="cvc" id="codigo" placeholder="CVC" style="border-radius: 5px; width: 37px;" />
+                                                                <input type="text" name="cvc" id="codigo" placeholder="CVC" style="border-radius: 5px; width: 37px;" required />
                                                             </div>
                                                         </div>
                                                         <div class="row" style="margin-bottom: 15px;">
                                                             <div class="col-md-12">
-                                                                
+                                                                <!-- Quantidade de ingressos -->
                                                                 <label for="quantidade">Quantidade: </label>
-                                                                <input type="number" min="1" max="10" style="border-radius: 10px; width: 40px;" />
+                                                                <input name="quantidade" type="number" min="1" max="10" style="border-radius: 10px; width: 40px;" required />
                                                             </div>
                                                         </div>
                                                         <div class="row" style="margin-bottom: 15px;">
                                                             <div class="col-md-12">
                                                                 <div class="glyphicon glyphicon-piggy-bank">
-
                                                                 </div>
                                                                 <label for="preco">Total: R$ </label>
+                                                                <!-- Aqui será pegado o preço do ingresso e multiplicado pela quantidade de ingressos, expondo sempre ao usuario o novo valor -->
+                                                                <div style="color: green;">Preço</div>
                                                             </div>
                                                         </div>
                                                         <div class="row" style="margin-bottom: 15px;">
                                                             <div class="col-md-12">
+                                                                <!-- Aqui está localizado o botão de cancelar -->
                                                                 <a href="@Url.Action("Eventos", "Evento")">
-                                                                    <button type="button" class="btn btn-warning">Cancelar</button></a>
-                                                                <button type="button" class="btn btn-info">Confirmar</button>
+                                                                    <button type="button" class="btn btn-warning">Cancelar</button></a> 
+                                                                <!-- Aqui está localizado o botão de confirmar compra -->
+                                                                <button type="submit" class="btn btn-info">Confirmar</button>
                                                             </div>
                                                         </div>
 
@@ -159,6 +163,7 @@
 
 </div>
 
+<!-- Mascaras para os inputs do numero do cartão e do CVC, limitando o usuario a escrever só o que for necessario -->
 @section Scripts {
     <script>
         $(document).ready(function () {

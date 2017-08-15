@@ -10,45 +10,52 @@
   <script src="scripts/jquery-1.9.1.js"></script>
   <script src="scripts/bootstrap.min.js"></script>*@
 
-@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" }))
-  {
-      @Html.AntiForgeryToken();
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" })) {
+    @Html.AntiForgeryToken();
    
-      @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
    
-      <div class="container">
-          <div class="form-login">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <div class="panel-title">Login do Sistema</div>
-                  </div>
-   
-                  <div style="padding-top:30px" class="panel-body">
-                      <div style="display:none" id="result" class="alert alert-danger col-sm-12">
-   
-                      </div>
-   
-                      <div style="margin-bottom: 25px" class="input-group">
-                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                          @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control input-lg", placeholder = "Usuário", autofocus = true } })
-                          @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
-                      </div>
+    <div class="container">
+        <div class="form-login" style="width: 400px; margin: 0 auto;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title" style="text-align: center; text-shadow: 0.5px 0.5px 0.5px"; >Login do Sistema</div>
+                </div>
 
-   
-                      <div style="margin-bottom: 25px" class="input-group">
-                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                          @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control input-lg", placeholder = "Senha" } })
-                          @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                      </div>
-   
-                      <div style="margin-top:10px" class="form-group">
-                          
-                          <div class="col-sm-12 controls">
-                              <input type="submit" value="Acessar" class="btn primary btn-lg" />
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  }
+                <div style="padding-top: 30px" class="panel-body">
+                    <div style="display: none" id="result" class="alert alert-danger col-sm-12">
+                    </div>
+
+
+                    <div style="margin-bottom: 25px" class="input-group">
+
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                        @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control input-lg", placeholder = "Usuário", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
+                    </div>
+
+
+
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control input-lg", placeholder = "Senha" }})
+                        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div style="margin-top: 10px" class="form-group">
+
+                        <div class="col-sm-12 controls">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                <input type="submit" value="Acessar" class="btn primary btn-lg">
+                            </div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
