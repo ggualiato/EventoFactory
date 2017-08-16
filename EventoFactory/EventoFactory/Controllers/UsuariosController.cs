@@ -25,11 +25,13 @@ namespace EventoFactory.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Usuarios usuario)
+        public ActionResult Cadastrar(Usuarios u)
         {
+            u.Perfil = "usuario";
+
             if (ModelState.IsValid)
             {
-                if (usuarioDAO.CadastrarUsuario(usuario))
+                if (usuarioDAO.CadastrarUsuario(u))
                 {
                     ViewBag.Mensagem = "DEU CERTO";
                 }

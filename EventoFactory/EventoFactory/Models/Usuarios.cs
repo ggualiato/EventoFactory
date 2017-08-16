@@ -27,14 +27,17 @@ namespace EventoFactory.Models
         [Required(ErrorMessage = "Campo obrigatório")]     
         public string Nome { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatório")]
         public string Usuario { get; set; }
-            
+
+        [Required(ErrorMessage = "Campo obrigatório")]
         public string Senha { get; set; }
-       
+
+        [Required(ErrorMessage = "Campo obrigatório")]
         public string Email { get; set; }
 
         public string Perfil { get; set; }
-    
+        
         public virtual ICollection<Compras> Compras { get; set; }
         public virtual ICollection<Feedbacks> Feedbacks { get; set; }
     }

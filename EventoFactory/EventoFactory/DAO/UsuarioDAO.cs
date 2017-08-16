@@ -8,13 +8,14 @@ namespace EventoFactory.DAO
 {
     public class UsuarioDAO
     {
-        ServidorEventoEntities1 db = new ServidorEventoEntities1();
+        ServidorEventoEntities db = new ServidorEventoEntities();
 
-        public Boolean CadastrarUsuario(Usuarios usuario)
+        public Boolean CadastrarUsuario(Usuarios a)
         {
             try
             {
-                db.Usuarios.Add(usuario);
+                db.Usuarios.Add(a);
+                db.SaveChanges();
 
                 return true;
             }
