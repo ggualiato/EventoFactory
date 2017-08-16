@@ -1,0 +1,61 @@
+﻿@model EventoFactory.Models.Eventos
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class ="ciano">
+<h2>Editar Evento</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Eventos</legend>
+
+         @Html.HiddenFor(model => model.ID_Evento)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Capacidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Capacidade)
+            @Html.ValidationMessageFor(model => model.Capacidade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ID_Local, "Locais")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ID_Local", String.Empty)
+            @Html.ValidationMessageFor(model => model.ID_Local)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+    </div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

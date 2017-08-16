@@ -1,0 +1,43 @@
+﻿@model EventoFactory.Models.Eventos
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="ciano">
+<h2>Deletar Evento</h2>
+
+<h3>Tem certeza que deseja mesmo deletar esse evento?</h3>
+<fieldset>
+    <legend>Eventos</legend>
+
+         @Html.HiddenFor(model => model.ID_Evento) 
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Capacidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Capacidade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Locais.Endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Locais.Endereco)
+    </div>
+</fieldset>
+    
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </p>
+}
+    </div>
