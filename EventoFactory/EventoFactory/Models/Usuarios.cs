@@ -26,7 +26,8 @@ namespace EventoFactory.Models
 
         [Required(ErrorMessage = "Campo obrigatório")]     
         public string Nome { get; set; }
-
+       
+        [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "O login deve possuir somente letras e deve ter de 5 a 15 caracteres!")]
         [Required(ErrorMessage = "Campo obrigatório")]
         public string Usuario { get; set; }
 
@@ -34,6 +35,8 @@ namespace EventoFactory.Models
         public string Senha { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
+        //Regular expression que limita o usuario a escrever um email valido.
+        [RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessage = "O email informado não é valido!")]
         public string Email { get; set; }
 
         public string Perfil { get; set; }

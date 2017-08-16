@@ -1,15 +1,35 @@
 ﻿@model EventoFactory.Models.Usuarios
 
-
-
 @{
     ViewBag.Title = "Historico";
 }
-
-<div style="background-color: gray; width: 300px; height: 300px; margin: 0 auto;">
-
-
-
-
-
+<link href="~/Content/style.css" rel="stylesheet">
+<div class="container">
+    <h1 style="color:#bab6b6; padding-bottom: 15px; font-family:Andale Mono, monospace;">Histórico de Compras</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover table-condensed" style="background-color: #9f9a9a;">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Evento</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                        <th>Protocolo da compra</th>
+                    </tr>
+                    <tr>
+                        <td>Tabela</td>
+                        <td>Factory</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>pro030303</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+
+
