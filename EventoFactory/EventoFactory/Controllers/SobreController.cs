@@ -11,7 +11,7 @@ namespace EventoFactory.Controllers
         //
         // GET: /Sobre/
 
-        public ActionResult Sobre()
+        public ActionResult SobreFactory()
         {
             return View();
         }

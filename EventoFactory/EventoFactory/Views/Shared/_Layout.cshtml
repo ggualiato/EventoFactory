@@ -8,6 +8,10 @@
     <meta name="author" content="">
 
     <title>EventoFactory</title>
+        <!-- Bootstrap Core CSS -->
+
+    <!-- Custom CSS -->
+    <link href="~/Content/one-page-wonder.css" rel="stylesheet">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/shop-homepage.css" rel="stylesheet">
     <link href="~/Content/design.css" rel="stylesheet">
@@ -41,10 +45,10 @@
                         <a href="@Url.Action("Historico","Historico")"><font class="ciano">Ingressos Comprados</font></a>
                     </li>
                     <li>
-                        <a href="#"><font class="ciano">Contato</font></a>
+                        <a href="@Url.Action("ContatoFactory", "Contato")"><font class="ciano">Contato</font></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#sobrenos"><font class="ciano">Sobre</font></a>
+                        <a class="page-scroll" href="@Url.Action("SobreFactory", "Sobre")"><font class="ciano">Sobre</font></a>
                     </li>
                     <li>
                         <a class="page-scroll" href="@Url.Action("Eventos", "Evento")"> <font class="ciano">Eventos</font> </a>
@@ -54,7 +58,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a class="page-scroll" href="#cadastro">Cadastrar</a></li> -->
                     <li>
-                        <a class="page-scroll" href="@Url.Action("Cadastrar", "Usuarios")" id="bt_entrar"><font class="ciano">Cadastrar</font></a>
+                        <a class="page-scroll" href="#login" id="bt_entrar"><font class="ciano">Cadastrar</font></a>
                     </li>
                     <li>
                         <a href="@Url.Action("Login", "LoginAccount")"><font class="ciano">Entrar</font></a>

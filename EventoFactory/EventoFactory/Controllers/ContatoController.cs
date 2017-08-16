@@ -11,7 +11,7 @@ namespace EventoFactory.Controllers
         //
         // GET: /Contato/
 
-        public ActionResult Contato()
+        public ActionResult ContatoFactory()
         {
             return View();
         }
