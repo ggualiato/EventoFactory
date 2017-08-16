@@ -178,6 +178,7 @@
     <Content Include="Content\design.css" />
     <Content Include="Content\one-page-wonder.css" />
     <Content Include="Content\shop-homepage.css" />
+    <Content Include="Content\stylish-portfolio.css" />
     <Content Include="Content\themes\base\images\aboutus.jpg" />
     <Content Include="Content\themes\base\images\ceu.png" />
     <Content Include="Content\themes\base\images\concerto.jpg" />
@@ -233,6 +234,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\stylish-portfolio.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
