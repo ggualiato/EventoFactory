@@ -131,6 +131,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginAccountController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="DAO\EventosDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,16 +174,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bannerMulher.png" />
+    <Content Include="Content\bootstrap-social.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\design.css" />
+    <Content Include="Content\docs.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\mdb.min.css" />
     <Content Include="Content\one-page-wonder.css" />
     <Content Include="Content\shop-homepage.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\stylish-portfolio.css" />
     <Content Include="Content\themes\base\images\aboutus.jpg" />
+    <Content Include="Content\themes\base\images\bannerMulher.png" />
     <Content Include="Content\themes\base\images\ceu.png" />
+    <Content Include="Content\themes\base\images\Cinza.png" />
     <Content Include="Content\themes\base\images\concerto.jpg" />
     <Content Include="Content\themes\base\images\curtir.png" />
     <Content Include="Content\themes\base\images\DJ.gif" />
@@ -235,6 +247,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\stylish-portfolio.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -263,11 +276,17 @@
       <DependentUpon>EventoFactory.edmx</DependentUpon>
       <LastGenOutput>EventoFactory.cs</LastGenOutput>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="popper\popper.js" />
     <Content Include="popper\popper.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\docs.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.min.js" />
     <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
@@ -320,9 +339,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\mdb.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -340,6 +362,7 @@
     <Content Include="Views\Historico\Historico.cshtml" />
     <Content Include="Views\Contato\ContatoFactory.cshtml" />
     <Content Include="Views\Sobre\SobreFactory.cshtml" />
+    <Content Include="Views\Usuarios\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
