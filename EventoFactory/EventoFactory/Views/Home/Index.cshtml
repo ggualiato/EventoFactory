@@ -3,36 +3,33 @@
 }
 
 <body>
-    <!-- Page Content -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <div class="row carousel-holder">
-                    <div class="col-md-12">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="slide-image" src="Content/themes/base/images/concerto.jpg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="Content/themes/base/images/festa.jpg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="Content/themes/base/images/rock.jpg" alt="">
-                                </div>
+            <div class="row carousel-holder">
+                <div class="col-md-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="slide-image" src="Content/themes/base/images/concerto.jpg" alt="">
                             </div>
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
+                            <div class="item">
+                                <img class="slide-image" src="Content/themes/base/images/festa.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="Content/themes/base/images/rock.jpg" alt="">
+                            </div>
                         </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -41,49 +38,62 @@
 
     <div class="container-fluid" id="container-jumb-eventos">
         <div class="jumbotron" id="jumb-eventos">
+            <h1>Próximos Eventos</h1>
+            <div id="paragrafo-jumbotron">
+                <p>Confira os eventos em destaque abaixo.</p>
+            </div>
             <!-- COLOCAR ALGMA COISA AQUI -->
         </div>
     </div>
 
-    <section class="container-fluid">
+    <section class="container-fluid" id="section-thumbnails">
         <div class="row">
-            <div class="col-sm-4 col-lg-4 col-md-4">
+
+            <div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="Content/themes/base/images/DJ.gif" alt="">
+                    <img src="Content/themes/base/images/banda.jpg" alt="">
                     <div class="caption">
                         <h4 class="pull-right">R$124.99</h4>
-                        <h4>@Html.ActionLink("Produto 1", "Eventos", "Evento")
-                        </h4>
+                        <h4>@Html.ActionLink("Produto 1", "Eventos", "Evento")</h4>
                     </div>
-
                 </div>
             </div>
-            <div class="col-sm-4 col-lg-4 col-md-4">
+
+            <div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="Content/themes/base/images/DJ.gif" alt="">
+                    <img src="Content/themes/base/images/dj.jpg" alt="">
                     <div class="caption">
                         <h4 class="pull-right">R$64.99</h4>
-                        <h4>@Html.ActionLink("Produto 2", "Eventos", "Evento")
+                        <h4>
+                            @Html.ActionLink("Produto 2", "Eventos", "Evento")
                         </h4>
                     </div>
-             
                 </div>
             </div>
 
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="Content/themes/base/images/DJ.gif" alt="">
+                    <img src="Content/themes/base/images/trap.jpg" alt="">
                     <div class="caption">
                         <h4 class="pull-right">R$129.99</h4>
-                        <h4>@Html.ActionLink("Produto 3", "Eventos", "Evento")
+                        <h4>
+                            @Html.ActionLink("Produto 3", "Eventos", "Evento")
                         </h4>
                     </div>
-                 
                 </div>
             </div>
+
+            <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="Content/themes/base/images/people.jpg" alt="">
+                    <div class="caption">
+                        <h4 class="pull-right">R$129.99</h4>
+                        <h4>@Html.ActionLink("Produto 4", "Eventos", "Evento")</h4>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- final da ROW -->
     </section>
 </body>
-
-</html>

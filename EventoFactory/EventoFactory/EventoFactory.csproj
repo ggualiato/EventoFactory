@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -124,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdmEventosController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
@@ -364,6 +367,11 @@
     <Content Include="Views\Contato\ContatoFactory.cshtml" />
     <Content Include="Views\Sobre\SobreFactory.cshtml" />
     <Content Include="Views\Usuarios\Cadastrar.cshtml" />
+    <Content Include="Views\AdmEventos\Create.cshtml" />
+    <Content Include="Views\AdmEventos\Delete.cshtml" />
+    <Content Include="Views\AdmEventos\Details.cshtml" />
+    <Content Include="Views\AdmEventos\Edit.cshtml" />
+    <Content Include="Views\AdmEventos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

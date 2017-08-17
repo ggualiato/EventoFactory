@@ -1,70 +1,89 @@
-body {
+form {
+    font-family: Arial, sans-serif;
+}
 
+#titulo-cadastro {
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
-.ciano{
-color:#00BFFF;
+
+#tela-cadastro-background {
+    background-image: url("themes/base/images/fundo-cadastro1.png");
+    background-color: rgba(0, 0, 0, 0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 40px;
+    padding-top: 20px;
 }
+
+.ciano {
+    color: #00BFFF;
+}
+
 .margem {
-
-    margin-left:50px;
+    margin-left: 50px;
 }
 
-body, header{
-	background-color: #333;
+body, header {
+    background-color: #333;
 }
 
-#bt_entrar{
-	padding-left: 0px;
+#bt_entrar {
+    padding-left: 0px;
 }
 
-#txt_login, #txt_senha{
-
-background-color: #333;
-border: none;
-font: 12px verdana, arial, sans-serif;
+#txt_login, #txt_senha {
+    background-color: #333;
+    border: none;
+    font: 12px verdana, arial, sans-serif;
 }
 
-#jumb-eventos{
-	background-color: #222222;
-	color: #ee9a02;
-	margin: 15px;
+#jumb-eventos {
+    background-color: #222222;
+    color: #ee9a02;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-#container-jumb-eventos{
-	padding: 0px;
+#container-jumb-eventos {
+    padding: 0px;
 }
 
-#sobrenos{
-	background-color: #222222;
-	color: #ee9a02;
-	padding: 10px;
-	margin: 15px;
+#sobrenos {
+    background-color: #222222;
+    color: #ee9a02;
+    padding: 10px;
+    margin: 15px;
 }
 
-#paragrafo-sobrenos{
-	font: 14px verdana, arial, sans-serif;
-	color: #FFF;
-	padding-top: 10px; 
-}
-
-footer{
+#paragrafo-sobrenos {
     font: 14px verdana, arial, sans-serif;
-    color:#FFF;
-    padding: 20px;
+    color: #FFF;
+    padding-top: 10px;
+}
+
+footer {
+    font: 14px verdana, arial, sans-serif;
+    color: #FFF;
+    padding: 20px !important;
     text-align: center;
     background-color: #222222;
+    margin: 30px;
 }
 
-footer address:first-child {
- margin-bottom: 0;
-}
+    footer address:first-child {
+        margin-bottom: 0;
+    }
 
-footer address:last-child {
- margin-bottom: 0;
-}
+    footer address:last-child {
+        margin-bottom: 0;
+    }
 
 .cursive {
     font-family: cursive;
 }
 
-
+#section-thumbnails {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}

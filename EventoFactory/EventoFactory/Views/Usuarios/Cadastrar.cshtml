@@ -6,66 +6,60 @@
 
 @using (Html.BeginForm("Cadastrar", "Usuarios", FormMethod.Post))
 {
+    <div class="container-fluid" id="tela-cadastro-background">
+        <div class="container-fluid" id="tela-cadastro">
+            <h2 id="titulo-cadastro">Cadastre-se</h2>
+            @ViewBag.Mensagem
 
-
-
-    <div class="container">
-        <h2><font class="ciano">Cadastre-se</font></h2>
-        @ViewBag.Mensagem;
-
-        <fieldset>
-            <legend><font class="ciano">Usuario</font></legend>
-
-            <form class="ciano">
-                <div class="ciano">
-
-                    <div>
-                        <div class="editor-label">
-                            @Html.LabelFor(x => x.Email)                            
+            <fieldset>
+                <div class="col-md-6 col-md-offset-3">
+                    <form>
+                        <div class="form-group">
+                            <div class="editor-label">
+                                @Html.LabelFor(x => x.Email)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "E-mail", type = "email" })
+                                @Html.ValidationMessageFor(x => x.Email)
+                            </div>
                         </div>
-                        <div class="editor-field">
-                            @Html.EditorFor(x => x.Email)
-                            @Html.ValidationMessageFor(x => x.Email)
-                        </div>                        
-                    </div>
 
-                    <div>
-                        <div class="editor-label">
-                            @Html.LabelFor(x => x.Nome)    
+                        <div class="form-group">
+                            <div class="editor-label">
+                                @Html.LabelFor(x => x.Nome)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", placeholder = "Nome", type = "text" })
+                                @Html.ValidationMessageFor(x => x.Nome)
+                            </div>
                         </div>
-                        <div class="editor-field">
-                            @Html.EditorFor(x => x.Nome)
-                            @Html.ValidationMessageFor(x => x.Nome)
-                        </div>
-                    </div>
 
-                    <div>
-                        <div class="editor-label">
-                            @Html.LabelFor(x => x.Usuario)    
+                        <div class="form-group">
+                            <div class="editor-label">
+                                @Html.LabelFor(x => x.Usuario)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(x => x.Usuario, new { @class = "form-control", placeholder = "Usuário", type = "text" })
+                                @Html.ValidationMessageFor(x => x.Usuario)
+                            </div>
                         </div>
-                        <div class="editor-field">
-                            @Html.EditorFor(x => x.Usuario)
-                            @Html.ValidationMessageFor(x => x.Usuario)
+
+                        <div class="form-group">
+                            <div class="editor-label">
+                                @Html.LabelFor(x => x.Senha)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(x => x.Senha, new { @class = "form-control", placeholder = "Senha", type = "password" })
+                                @Html.ValidationMessageFor(x => x.Senha)
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="editor-label">
-                            @Html.LabelFor(x => x.Senha)
-                        </div>
-                        <div class="editor-field">
-                            @Html.EditorFor(x => x.Senha)
-                            @Html.ValidationMessageFor(x => x.Senha)
-                        </div>                        
-                    </div>
+                        <p>
+                            <input class="btn btn-default" type="submit" value="Cadastrar">
+                        </p>
+                    </form>
                 </div>
-
-                <p>
-                    <input type="submit" value="Enviar">
-                </p>
-
-
-            </form>
-        </fieldset>
+            </fieldset>
+        </div>
     </div>
 }
 
