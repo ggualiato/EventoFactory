@@ -201,6 +201,5 @@ C:\Users\re035175\Documents\ProjetoFinal1.5\EventoFactory\EventoFactory\EventoFa
 C:\Users\re035175\Documents\ProjetoFinal1.5\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.xml
 C:\Users\re035175\Documents\ProjetoFinal1.5\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.Deployment.xml
 C:\Users\re035175\Documents\ProjetoFinal1.5\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.Razor.xml
-C:\Users\re035175\Documents\ProjetoFinal1.5\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.csprojResolveAssemblyReference.cache
 C:\Users\re035175\Documents\ProjetoFinal1.5\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.dll
 C:\Users\re035175\Documents\ProjetoFinal1.5\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.pdb

@@ -20,6 +20,10 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Compras" EntitySet="Compras" />
           </AssociationSet>
+          <AssociationSet Name="FK_Eventos_ID_Ingresso" Association="ServidorEventoModel.Store.FK_Eventos_ID_Ingresso">
+            <End Role="Ingressos" EntitySet="Ingressos" />
+            <End Role="Eventos" EntitySet="Eventos" />
+          </AssociationSet>
           <AssociationSet Name="FK_Eventos_ID_Local" Association="ServidorEventoModel.Store.FK_Eventos_ID_Local">
             <End Role="Locais" EntitySet="Locais" />
             <End Role="Eventos" EntitySet="Eventos" />
@@ -32,10 +36,6 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Feedbacks" EntitySet="Feedbacks" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ingressos_ID_Evento" Association="ServidorEventoModel.Store.FK_Ingressos_ID_Evento">
-            <End Role="Eventos" EntitySet="Eventos" />
-            <End Role="Ingressos" EntitySet="Ingressos" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Compras">
           <Key>
@@ -44,6 +44,7 @@
           <Property Name="ID_Compra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ID_Usuario" Type="int" Nullable="false" />
           <Property Name="ID_Ingresso" Type="int" Nullable="false" />
+          <Property Name="QTD_Comprada" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Eventos">
           <Key>
@@ -55,6 +56,7 @@
           <Property Name="Descricao" Type="varchar" MaxLength="150" />
           <Property Name="Imagem" Type="varbinary(max)" />
           <Property Name="ID_Local" Type="int" Nullable="false" />
+          <Property Name="ID_Ingresso" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Feedbacks">
           <Key>
@@ -74,7 +76,6 @@
           <Property Name="Preco" Type="decimal" Nullable="false" />
           <Property Name="Quantidade_Inicial" Type="int" Nullable="false" />
           <Property Name="QTD_Vendida" Type="int" />
-          <Property Name="ID_Evento" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Locais">
           <Key>
@@ -122,6 +123,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Eventos_ID_Ingresso">
+          <End Role="Ingressos" Type="ServidorEventoModel.Store.Ingressos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Eventos" Type="ServidorEventoModel.Store.Eventos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingressos">
+              <PropertyRef Name="ID_Ingresso" />
+            </Principal>
+            <Dependent Role="Eventos">
+              <PropertyRef Name="ID_Ingresso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Eventos_ID_Local">
           <End Role="Locais" Type="ServidorEventoModel.Store.Locais" Multiplicity="1" />
           <End Role="Eventos" Type="ServidorEventoModel.Store.Eventos" Multiplicity="*" />
@@ -160,26 +175,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ingressos_ID_Evento">
-          <End Role="Eventos" Type="ServidorEventoModel.Store.Eventos" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Ingressos" Type="ServidorEventoModel.Store.Ingressos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Eventos">
-              <PropertyRef Name="ID_Evento" />
-            </Principal>
-            <Dependent Role="Ingressos">
-              <PropertyRef Name="ID_Evento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ServidorEventoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="ServidorEventoEntities1" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="ServidorEventoEntities2" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Compras" EntityType="ServidorEventoModel.Compras" />
           <EntitySet Name="Eventos" EntityType="ServidorEventoModel.Eventos" />
           <EntitySet Name="Feedbacks" EntityType="ServidorEventoModel.Feedbacks" />
@@ -194,6 +195,10 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Compras" EntitySet="Compras" />
           </AssociationSet>
+          <AssociationSet Name="FK_Eventos_ID_Ingresso" Association="ServidorEventoModel.FK_Eventos_ID_Ingresso">
+            <End Role="Ingressos" EntitySet="Ingressos" />
+            <End Role="Eventos" EntitySet="Eventos" />
+          </AssociationSet>
           <AssociationSet Name="FK_Eventos_ID_Local" Association="ServidorEventoModel.FK_Eventos_ID_Local">
             <End Role="Locais" EntitySet="Locais" />
             <End Role="Eventos" EntitySet="Eventos" />
@@ -201,10 +206,6 @@
           <AssociationSet Name="FK_Feedbacks_ID_Evento" Association="ServidorEventoModel.FK_Feedbacks_ID_Evento">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="Feedbacks" EntitySet="Feedbacks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ingressos_ID_Evento" Association="ServidorEventoModel.FK_Ingressos_ID_Evento">
-            <End Role="Eventos" EntitySet="Eventos" />
-            <End Role="Ingressos" EntitySet="Ingressos" />
           </AssociationSet>
           <AssociationSet Name="FK_Feedbacks_ID_Usuario" Association="ServidorEventoModel.FK_Feedbacks_ID_Usuario">
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -218,6 +219,7 @@
           <Property Name="ID_Compra" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
           <Property Name="ID_Ingresso" Type="Int32" Nullable="false" />
+          <Property Name="QTD_Comprada" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ingressos" Relationship="ServidorEventoModel.FK_Compras_ID_Ingresso" FromRole="Compras" ToRole="Ingressos" />
           <NavigationProperty Name="Usuarios" Relationship="ServidorEventoModel.FK_Compras_ID_Usuario" FromRole="Compras" ToRole="Usuarios" />
         </EntityType>
@@ -231,9 +233,10 @@
           <Property Name="Descricao" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="ID_Local" Type="Int32" Nullable="false" />
+          <Property Name="ID_Ingresso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ingressos" Relationship="ServidorEventoModel.FK_Eventos_ID_Ingresso" FromRole="Eventos" ToRole="Ingressos" />
           <NavigationProperty Name="Locais" Relationship="ServidorEventoModel.FK_Eventos_ID_Local" FromRole="Eventos" ToRole="Locais" />
           <NavigationProperty Name="Feedbacks" Relationship="ServidorEventoModel.FK_Feedbacks_ID_Evento" FromRole="Eventos" ToRole="Feedbacks" />
-          <NavigationProperty Name="Ingressos" Relationship="ServidorEventoModel.FK_Ingressos_ID_Evento" FromRole="Eventos" ToRole="Ingressos" />
         </EntityType>
         <EntityType Name="Feedbacks">
           <Key>
@@ -255,9 +258,8 @@
           <Property Name="Preco" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="Quantidade_Inicial" Type="Int32" Nullable="false" />
           <Property Name="QTD_Vendida" Type="Int32" />
-          <Property Name="ID_Evento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Compras" Relationship="ServidorEventoModel.FK_Compras_ID_Ingresso" FromRole="Ingressos" ToRole="Compras" />
-          <NavigationProperty Name="Eventos" Relationship="ServidorEventoModel.FK_Ingressos_ID_Evento" FromRole="Ingressos" ToRole="Eventos" />
+          <NavigationProperty Name="Eventos" Relationship="ServidorEventoModel.FK_Eventos_ID_Ingresso" FromRole="Ingressos" ToRole="Eventos" />
         </EntityType>
         <EntityType Name="Locais">
           <Key>
@@ -308,6 +310,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Eventos_ID_Ingresso">
+          <End Role="Ingressos" Type="ServidorEventoModel.Ingressos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Eventos" Type="ServidorEventoModel.Eventos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingressos">
+              <PropertyRef Name="ID_Ingresso" />
+            </Principal>
+            <Dependent Role="Eventos">
+              <PropertyRef Name="ID_Ingresso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Eventos_ID_Local">
           <End Role="Locais" Type="ServidorEventoModel.Locais" Multiplicity="1" />
           <End Role="Eventos" Type="ServidorEventoModel.Eventos" Multiplicity="*" />
@@ -334,20 +350,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ingressos_ID_Evento">
-          <End Role="Eventos" Type="ServidorEventoModel.Eventos" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Ingressos" Type="ServidorEventoModel.Ingressos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Eventos">
-              <PropertyRef Name="ID_Evento" />
-            </Principal>
-            <Dependent Role="Ingressos">
-              <PropertyRef Name="ID_Evento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Feedbacks_ID_Usuario">
           <End Role="Usuarios" Type="ServidorEventoModel.Usuarios" Multiplicity="1" />
           <End Role="Feedbacks" Type="ServidorEventoModel.Feedbacks" Multiplicity="*" />
@@ -365,13 +367,14 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ServidorEventoModelStoreContainer" CdmEntityContainer="ServidorEventoEntities1">
+        <EntityContainerMapping StorageEntityContainer="ServidorEventoModelStoreContainer" CdmEntityContainer="ServidorEventoEntities2">
           <EntitySetMapping Name="Compras">
             <EntityTypeMapping TypeName="ServidorEventoModel.Compras">
               <MappingFragment StoreEntitySet="Compras">
                 <ScalarProperty Name="ID_Compra" ColumnName="ID_Compra" />
                 <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
                 <ScalarProperty Name="ID_Ingresso" ColumnName="ID_Ingresso" />
+                <ScalarProperty Name="QTD_Comprada" ColumnName="QTD_Comprada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -384,6 +387,7 @@
                 <ScalarProperty Name="Descricao" ColumnName="Descricao" />
                 <ScalarProperty Name="Imagem" ColumnName="Imagem" />
                 <ScalarProperty Name="ID_Local" ColumnName="ID_Local" />
+                <ScalarProperty Name="ID_Ingresso" ColumnName="ID_Ingresso" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -405,7 +409,6 @@
                 <ScalarProperty Name="Preco" ColumnName="Preco" />
                 <ScalarProperty Name="Quantidade_Inicial" ColumnName="Quantidade_Inicial" />
                 <ScalarProperty Name="QTD_Vendida" ColumnName="QTD_Vendida" />
-                <ScalarProperty Name="ID_Evento" ColumnName="ID_Evento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

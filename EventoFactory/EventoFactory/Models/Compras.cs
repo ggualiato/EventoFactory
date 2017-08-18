@@ -17,6 +17,7 @@ namespace EventoFactory.Models
         public int ID_Compra { get; set; }
         public int ID_Usuario { get; set; }
         public int ID_Ingresso { get; set; }
+        public int QTD_Comprada { get; set; }
     
         public virtual Ingressos Ingressos { get; set; }
         public virtual Usuarios Usuarios { get; set; }

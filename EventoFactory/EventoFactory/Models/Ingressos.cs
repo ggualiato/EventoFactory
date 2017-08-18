@@ -17,15 +17,15 @@ namespace EventoFactory.Models
         public Ingressos()
         {
             this.Compras = new HashSet<Compras>();
+            this.Eventos = new HashSet<Eventos>();
         }
     
         public int ID_Ingresso { get; set; }
         public decimal Preco { get; set; }
         public int Quantidade_Inicial { get; set; }
         public Nullable<int> QTD_Vendida { get; set; }
-        public int ID_Evento { get; set; }
     
         public virtual ICollection<Compras> Compras { get; set; }
-        public virtual Eventos Eventos { get; set; }
+        public virtual ICollection<Eventos> Eventos { get; set; }
     }
 }

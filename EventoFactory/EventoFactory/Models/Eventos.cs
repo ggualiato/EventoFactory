@@ -17,7 +17,6 @@ namespace EventoFactory.Models
         public Eventos()
         {
             this.Feedbacks = new HashSet<Feedbacks>();
-            this.Ingressos = new HashSet<Ingressos>();
         }
     
         public int ID_Evento { get; set; }
@@ -26,11 +25,10 @@ namespace EventoFactory.Models
         public string Descricao { get; set; }
         public byte[] Imagem { get; set; }
         public int ID_Local { get; set; }
-
-
-        
+        public int ID_Ingresso { get; set; }
+    
+        public virtual Ingressos Ingressos { get; set; }
         public virtual Locais Locais { get; set; }
         public virtual ICollection<Feedbacks> Feedbacks { get; set; }
-        public virtual ICollection<Ingressos> Ingressos { get; set; }
     }
 }

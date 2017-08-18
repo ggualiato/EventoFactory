@@ -148,38 +148,38 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Compras.cs">
-      <DependentUpon>EventoFactory.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EventoFactory.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EventoFactory.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EventoFactory.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EventoFactory.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EventoFactory.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EventoFactory.edmx</DependentUpon>
+      <DependentUpon>ServidorEvento.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Eventos.cs">
-      <DependentUpon>EventoFactory.tt</DependentUpon>
+      <DependentUpon>ServidorEvento.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedbacks.cs">
-      <DependentUpon>EventoFactory.tt</DependentUpon>
+      <DependentUpon>ServidorEvento.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingressos.cs">
-      <DependentUpon>EventoFactory.tt</DependentUpon>
+      <DependentUpon>ServidorEvento.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Locais.cs">
-      <DependentUpon>EventoFactory.tt</DependentUpon>
+      <DependentUpon>ServidorEvento.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\ServidorEvento.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServidorEvento.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServidorEvento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServidorEvento.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServidorEvento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServidorEvento.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Usuarios.cs">
-      <DependentUpon>EventoFactory.tt</DependentUpon>
+      <DependentUpon>ServidorEvento.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -269,23 +269,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <EntityDeploy Include="Models\EventoFactory.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EventoFactory.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EventoFactory.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EventoFactory.edmx</DependentUpon>
-      <LastGenOutput>EventoFactory.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\EventoFactory.edmx.diagram">
-      <DependentUpon>EventoFactory.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\EventoFactory.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EventoFactory.edmx</DependentUpon>
-      <LastGenOutput>EventoFactory.cs</LastGenOutput>
-    </Content>
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -300,6 +283,23 @@
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\PortalDoUsuario\Views\Sobre\SobreFactory.cshtml" />
     <Content Include="Areas\PortalDoUsuario\Views\Contato\ContatoFactory.cshtml" />
+    <EntityDeploy Include="Models\ServidorEvento.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ServidorEvento.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ServidorEvento.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServidorEvento.edmx</DependentUpon>
+      <LastGenOutput>ServidorEvento.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ServidorEvento.edmx.diagram">
+      <DependentUpon>ServidorEvento.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ServidorEvento.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServidorEvento.edmx</DependentUpon>
+      <LastGenOutput>ServidorEvento.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="popper\popper.js" />
     <Content Include="popper\popper.min.js" />
