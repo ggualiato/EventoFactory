@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "Eventos";
+    Layout = "../Shared/_LayoutPortalUsuario.cshtml";
+}
+
+
+
+<title>Shop Item - Start Bootstrap Template</title>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                <div class="caption-full">
+
+                    <h4 class="text-center" id="nomeProduto">Nome do produto</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center" style="margin-top: 5%; margin-bottom: 5%; margin-left: 5%;">
+
+                            <a href="@Url.Action("Index", "Home")">
+                                <button type="button" class="btn btn-danger" style="float: left;">Voltar</button></a>
+                            <button type="button" class="btn btn-success" style="margin-right: 18%;" data-toggle="modal" data-target=".bd-example-modal-sm">Comprar</button>
+                            <!-- Aqui abre caixinha de dialogo -->
+                            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content" style="padding-bottom: 30px; background-color: #FFFFE0">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h2 style="color: #B5B5B5">Comprar ingresso</h2>
+                                                        <hr />
+                                                    </div>
+                                                </div>
+                                                <!-- Nome do titular -->
+                                                <form name="pagamento" action="@Url.Action("Historico", "Historico")">
+                                                    <div class="row">
+
+                                                        <div class="col-md-12" style="margin-bottom: 15px;">
+                                                            <div class="glyphicon glyphicon-user"></div>
+                                                            <label for="Nome">Nome do titular: </label>
+                                                            <br />
+                                                            <input type="text" class="modal-content" required />
+                                                        </div>
+                                                    </div>
+                                                    <!-- Numero do cartão -->
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-bottom: 15px;">
+                                                            <div class="glyphicon glyphicon-credit-card"></div>
+                                                            <label for="numero">Numero do cartão: </label>
+                                                            <br />
+                                                            <input type="text" class="modal-content" id="numeroDoCartao" required />
+                                                        </div>
+                                                    </div>
+                                                    <!-- Vencimento do cartão -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="glyphicon glyphicon-calendar"></div>
+                                                            <label for="vencimento">Vencimento do cartão:</label>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-bottom: 15px;">
+                                                            <select name="mes" id="CaixaMes" style="border-radius: 5px;" required>
+                                                                <option value="" disabled selected>MM</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                            </select>
+
+                                                            <select name="ano" id="CaixaAno" style="border-radius: 5px;" required>
+                                                                <option value="" disabled selected>AA</option>
+                                                                <option value="17">17</option>
+                                                                <option value="18">18</option>
+                                                                <option value="19">19</option>
+                                                                <option value="20">20</option>
+                                                                <option value="21">21</option>
+                                                                <option value="22">22</option>
+                                                                <option value="23">23</option>
+                                                                <option value="24">24</option>
+                                                                <option value="25">25</option>
+                                                                <option value="26">26</option>
+                                                                <option value="27">27</option>
+                                                                <option value="28">28</option>
+                                                            </select>
+
+                                                        </div>
+                                                        <!-- Código de segurança -->
+                                                        <div class="row" style="margin-bottom: 15px;">
+                                                            <div class="col-md-12">
+                                                                <div class="glyphicon glyphicon-lock"></div>
+                                                                <label for="cvc">Codigo de segurança: </label>
+                                                                <input type="text" name="cvc" id="codigo" placeholder="CVC" style="border-radius: 5px; width: 37px;" required />
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin-bottom: 15px;">
+                                                            <div class="col-md-12">
+                                                                <!-- Quantidade de ingressos -->
+                                                                <label for="quantidade">Quantidade: </label>
+                                                                <input name="quantidade" type="number" min="1" max="10" style="border-radius: 10px; width: 40px;" required />
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin-bottom: 15px;">
+                                                            <div class="col-md-12">
+                                                                <div class="glyphicon glyphicon-piggy-bank">
+                                                                </div>
+                                                                <label for="preco">Total: R$ </label>
+                                                                <!-- Aqui será pegado o preço do ingresso e multiplicado pela quantidade de ingressos, expondo sempre ao usuario o novo valor -->
+                                                                <div style="color: green;">Preço</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin-bottom: 15px;">
+                                                            <div class="col-md-12">
+                                                                <!-- Aqui está localizado o botão de cancelar -->
+                                                                <a href="@Url.Action("Eventos", "Evento")">
+                                                                    <button type="button" class="btn btn-warning">Cancelar</button></a> 
+                                                                <!-- Aqui está localizado o botão de confirmar compra -->
+                                                                <button type="submit" class="btn btn-info">Confirmar</button>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- Mascaras para os inputs do numero do cartão e do CVC, limitando o usuario a escrever só o que for necessario -->
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#numeroDoCartao").inputmask("mask", { "mask": "9999-9999-9999-9999" });
+            $("#codigo").inputmask("mask", { "mask": "999" });
+        });
+    </script>
+}

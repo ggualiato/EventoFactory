@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Index";
-   
+    Layout = "../Shared/_LayoutAdmin.cshtml";
 }
 
 <body>
@@ -16,13 +16,13 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="slide-image" src="Content/themes/base/images/concerto.jpg" alt="">
+                                <img class="slide-image" src="~/Content/themes/base/images/concerto.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="Content/themes/base/images/festa.jpg" alt="">
+                                <img class="slide-image" src="~/Content/themes/base/images/festa.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="Content/themes/base/images/rock.jpg" alt="">
+                                <img class="slide-image" src="~/Content/themes/base/images/rock.jpg" alt="">
                             </div>
                         </div>
                         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -52,7 +52,7 @@
 
             <div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="Content/themes/base/images/banda.jpg" alt="">
+                    <img src="~/Content/themes/base/images/banda.jpg" alt="">
                     <div class="caption">
                         <h4 class="pull-right">R$124.99</h4>
                         <h4>@Html.ActionLink("Produto 1", "Eventos", "Evento")</h4>
@@ -62,7 +62,7 @@
 
             <div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="Content/themes/base/images/dj.jpg" alt="">
+                    <img src="~/Content/themes/base/images/dj.jpg" alt="">
                     <div class="caption">
                         <h4 class="pull-right">R$64.99</h4>
                         <h4>
@@ -74,7 +74,7 @@
 
             <div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="Content/themes/base/images/trap.jpg" alt="">
+                    <img src="~/Content/themes/base/images/trap.jpg" alt="">
                     <div class="caption">
                         <h4 class="pull-right">R$129.99</h4>
                         <h4>
@@ -86,7 +86,7 @@
 
             <div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="Content/themes/base/images/people.jpg" alt="">
+                    <img src="~/Content/themes/base/images/people.jpg" alt="">
                     <div class="caption">
                         <h4 class="pull-right">R$129.99</h4>
                         <h4>@Html.ActionLink("Produto 4", "Eventos", "Evento")</h4>

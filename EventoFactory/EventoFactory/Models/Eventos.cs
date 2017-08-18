@@ -26,7 +26,9 @@ namespace EventoFactory.Models
         public string Descricao { get; set; }
         public byte[] Imagem { get; set; }
         public int ID_Local { get; set; }
-    
+
+
+        
         public virtual Locais Locais { get; set; }
         public virtual ICollection<Feedbacks> Feedbacks { get; set; }
         public virtual ICollection<Ingressos> Ingressos { get; set; }

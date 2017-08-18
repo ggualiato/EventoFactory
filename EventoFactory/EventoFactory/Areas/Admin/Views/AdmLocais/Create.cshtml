@@ -1,0 +1,69 @@
+﻿@model EventoFactory.Models.Locais
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Locais</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Endereco)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Endereco)
+            @Html.ValidationMessageFor(model => model.Endereco)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Numero)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Numero)
+            @Html.ValidationMessageFor(model => model.Numero)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bairro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bairro)
+            @Html.ValidationMessageFor(model => model.Bairro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CEP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CEP)
+            @Html.ValidationMessageFor(model => model.CEP)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Alterar Locais", "Index")
+    <br />
+    @Html.ActionLink("Voltar para criação de eventos", "Index", "AdmEventos")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

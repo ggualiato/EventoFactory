@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using EventoFactory.Models;
 using System.Net;
 
-namespace EventoFactory.Controllers
+namespace EventoFactory.Areas.Admin.Controllers
 {
     public class AdmEventosController : Controller
     {
@@ -66,6 +66,23 @@ namespace EventoFactory.Controllers
             ViewBag.ID_Local = new SelectList(db.Locais, "ID_Local", "Endereco", eventos.ID_Local);
             return View(eventos);
         }
+
+        [HttpPost]
+        public ActionResult CriarLocal(Locais loc) {
+            if (ModelState.IsValid) {
+                db.Locais.Add(loc);
+                db.SaveChanges();
+                return RedirectToAction("Create");
+            }
+
+            ViewBag.ID_Local = new SelectList(db.Locais, "ID_Local", "Endereco", loc.ID_Local);
+            return View(loc);
+        
+        
+        
+        }
+
+
 
         //
         // GET: /AdmEventos/Edit/5

@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="ServidorEventoModel.Compras" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ServidorEventoModel.Eventos" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ServidorEventoModel.Feedbacks" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ServidorEventoModel.Ingressos" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServidorEventoModel.Ingressos" Width="1.5" PointX="5.375" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ServidorEventoModel.Locais" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ServidorEventoModel.Usuarios" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <AssociationConnector Association="ServidorEventoModel.FK_Compras_ID_Ingresso" ManuallyRouted="false" />

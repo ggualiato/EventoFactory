@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace EventoFactory.Controllers
+namespace EventoFactory.Areas.PortalDoUsuario.Controllers
 {
-    public class HistoricoController : Controller
+    public class SobreController : Controller
     {
         //
-        // GET: /Historico/
+        // GET: /Sobre/
 
-        public ActionResult Historico()
+        public ActionResult SobreFactory()
         {
             return View();
         }

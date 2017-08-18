@@ -1,0 +1,57 @@
+﻿@model EventoFactory.Models.Locais
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Locais</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_Local)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_Local)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Numero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Numero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bairro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CEP)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CEP)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

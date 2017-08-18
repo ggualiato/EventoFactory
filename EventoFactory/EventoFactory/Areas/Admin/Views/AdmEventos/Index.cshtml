@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EventoFactory.Models.Eventos>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="row">
+        <h2>Eventos Registrados</h2>
+
+        <p>
+            @Html.ActionLink("Criar novo Evento", "Create")
+
+        </p>
+
+        <table class="table table-striped table-bordered table-hover table-condensed" border="1" style="background-color:#dbd8d8;">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_Evento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Capacidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Locais.Endereco)
+                </th>
+             
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_Evento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Capacidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Locais.Endereco)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_Evento }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_Evento }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_Evento })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

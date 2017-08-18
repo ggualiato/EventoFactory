@@ -4,22 +4,18 @@
     ViewBag.Title = "Login";
 }
 
-@*  <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
-   
-  <script src="scripts/jquery-1.9.1.js"></script>
-  <script src="scripts/bootstrap.min.js"></script>*@
-
-@using (Html.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" })) {
+@using (Html.BeginForm("Login", "LoginAccount", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" }))
+{
     @Html.AntiForgeryToken();
-   
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-   
+
     <div class="container">
         <div class="form-login" style="width: 400px; margin: 0 auto;">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="panel-title" style="text-align: center; text-shadow: 0.5px 0.5px 0.5px"; >Login do Sistema</div>
+                    <div class="panel-title" style="text-align: center; text-shadow: 0.5px 0.5px 0.5px" ;>Login do Sistema</div>
                 </div>
 
                 <div style="padding-top: 30px" class="panel-body">
@@ -40,7 +36,7 @@
 
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control input-lg", placeholder = "Senha" }})
+                        @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control input-lg", placeholder = "Senha" } })
                         @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
                     </div>
 

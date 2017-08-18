@@ -52,6 +52,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
+                        <a href="@Url.Action("Historico","Historico")"><font class="ciano">Ingressos Comprados</font></a>
+                    </li>
+                    <li>
                         <a href="@Url.Action("ContatoFactory", "Contato")"><font class="ciano">Contato</font></a>
                     </li>
                     <li>
@@ -65,10 +68,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a class="page-scroll" href="#cadastro">Cadastrar</a></li> -->
                     <li>
-                        <a class="page-scroll" href="@Url.Action("Cadastrar", "Usuarios")" id="bt_entrar"><font class="ciano">Cadastrar</font></a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Login", "LoginAccount")"><font class="ciano">Entrar</font></a>
+                        <a href="@Url.Action("Login", "LoginAccount")"><font class="ciano">Sair</font></a>
                     </li>
                 </ul>
             </div>
@@ -97,6 +97,13 @@
         <address>
             Email: contato@eventosfactory.com.br
         </address>
+        <div class="row" style="margin-top:10px" class="ciano">
+            @if (Session["Nome"] != null)
+            {
+                <h1>@Session["Nome"].ToString()  @Session["Sobrenome"].ToString()</h1>
+
+            }
+        </div>
     </footer>
 </body>
 </html>

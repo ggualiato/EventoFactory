@@ -126,11 +126,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AdmEventosController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\PortalDoUsuario\Controllers\ContatoController.cs" />
+    <Compile Include="Areas\PortalDoUsuario\Controllers\EventoController.cs" />
+    <Compile Include="Areas\PortalDoUsuario\Controllers\HomeController.cs" />
+    <Compile Include="Areas\PortalDoUsuario\Controllers\SobreController.cs" />
+    <Compile Include="Areas\PortalDoUsuario\PortalDoUsuarioAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdmEventosController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdmLocaisController.cs" />
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
-    <Compile Include="Controllers\HistoricoController.cs" />
+    <Compile Include="Areas\PortalDoUsuario\Controllers\HistoricoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginAccountController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
@@ -284,6 +291,15 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\PortalDoUsuario\Views\Web.config" />
+    <Content Include="Areas\PortalDoUsuario\Views\Home\Index.cshtml" />
+    <Content Include="Areas\PortalDoUsuario\Views\Evento\Eventos.cshtml" />
+    <Content Include="Areas\PortalDoUsuario\Views\Shared\_LayoutPortalUsuario.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\PortalDoUsuario\Views\Sobre\SobreFactory.cshtml" />
+    <Content Include="Areas\PortalDoUsuario\Views\Contato\ContatoFactory.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="popper\popper.js" />
     <Content Include="popper\popper.min.js" />
@@ -362,19 +378,25 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\LoginAccount\Login.cshtml" />
     <Content Include="Views\Evento\Eventos.cshtml" />
-    <Content Include="Views\Admin\Admin.cshtml" />
-    <Content Include="Views\Historico\Historico.cshtml" />
+    <Content Include="Areas\PortalDoUsuario\Views\Historico\Historico.cshtml" />
     <Content Include="Views\Contato\ContatoFactory.cshtml" />
     <Content Include="Views\Sobre\SobreFactory.cshtml" />
     <Content Include="Views\Usuarios\Cadastrar.cshtml" />
-    <Content Include="Views\AdmEventos\Create.cshtml" />
-    <Content Include="Views\AdmEventos\Delete.cshtml" />
-    <Content Include="Views\AdmEventos\Details.cshtml" />
-    <Content Include="Views\AdmEventos\Edit.cshtml" />
-    <Content Include="Views\AdmEventos\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmEventos\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmEventos\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmEventos\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmEventos\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmEventos\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmLocais\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmLocais\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmLocais\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmLocais\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmLocais\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\PortalDoUsuario\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

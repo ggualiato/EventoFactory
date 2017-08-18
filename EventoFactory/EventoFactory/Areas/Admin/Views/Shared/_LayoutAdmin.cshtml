@@ -52,23 +52,17 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="@Url.Action("ContatoFactory", "Contato")"><font class="ciano">Contato</font></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="@Url.Action("SobreFactory", "Sobre")"><font class="ciano">Sobre</font></a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="@Url.Action("Eventos", "Evento")"> <font class="ciano">Eventos</font> </a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="@Url.Action("AdmEventos", "Index")"><font class="ciano">Cadastrar evento</font></a>
                     </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a class="page-scroll" href="#cadastro">Cadastrar</a></li> -->
                     <li>
-                        <a class="page-scroll" href="@Url.Action("Cadastrar", "Usuarios")" id="bt_entrar"><font class="ciano">Cadastrar</font></a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Login", "LoginAccount")"><font class="ciano">Entrar</font></a>
+                        <a href="@Url.Action("Login", "LoginAccount")"><font class="ciano">Sair</font></a>
                     </li>
                 </ul>
             </div>
@@ -97,6 +91,14 @@
         <address>
             Email: contato@eventosfactory.com.br
         </address>
+        <div class="row" style="margin-top:10px" class="ciano">
+            @if (Session["Nome"] != null)
+            {
+                <h1>@Session["Nome"].ToString()  @Session["Sobrenome"].ToString()</h1>
+
+            }
+        </div>
     </footer>
 </body>
 </html>
+
