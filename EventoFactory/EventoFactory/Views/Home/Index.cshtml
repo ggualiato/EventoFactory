@@ -1,7 +1,9 @@
 ﻿@{
     ViewBag.Title = "Index";
-   
+
 }
+
+@model IEnumerable<EventoFactory.Models.Eventos>
 
 <body>
     <div class="container-fluid">
@@ -50,49 +52,18 @@
     <section class="container-fluid" id="section-thumbnails">
         <div class="row">
 
-            <div class="col-sm-3 col-lg-3 col-md-3">
-                <div class="thumbnail">
-                    <img src="Content/themes/base/images/banda.jpg" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">R$124.99</h4>
-                        <h4>@Html.ActionLink("Produto 1", "Eventos", "Evento")</h4>
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-3 col-lg-3 col-md-3">
+                    <div class="thumbnail">
+                        <img src="Content/themes/base/images/banda.jpg" alt="">
+                        <div class="caption">
+                            <h4 class="pull-right">@Html.DisplayFor(modelItem => item.Ingressos.Preco)</h4>
+                            <h4>@Html.ActionLink(item.Nome, "Eventos", "Evento", new { id = item.ID_Evento })</h4>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-3 col-lg-3 col-md-3">
-                <div class="thumbnail">
-                    <img src="Content/themes/base/images/dj.jpg" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">R$64.99</h4>
-                        <h4>
-                            @Html.ActionLink("Produto 2", "Eventos", "Evento")
-                        </h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-3 col-lg-3 col-md-3">
-                <div class="thumbnail">
-                    <img src="Content/themes/base/images/trap.jpg" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">R$129.99</h4>
-                        <h4>
-                            @Html.ActionLink("Produto 3", "Eventos", "Evento")
-                        </h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-3 col-lg-3 col-md-3">
-                <div class="thumbnail">
-                    <img src="Content/themes/base/images/people.jpg" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">R$129.99</h4>
-                        <h4>@Html.ActionLink("Produto 4", "Eventos", "Evento")</h4>
-                    </div>
-                </div>
-            </div>
+                </div>                
+            }
 
         </div>
         <!-- final da ROW -->

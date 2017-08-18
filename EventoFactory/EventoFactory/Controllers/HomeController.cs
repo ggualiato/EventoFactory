@@ -13,15 +13,18 @@ namespace EventoFactory.Controllers
         //
         // GET: /Home/
 
+        ServidorEventoEntities db = new ServidorEventoEntities();
+
         public ActionResult Index()
         {
 
             FormsAuthentication.SignOut();
             Session["Nome"] = null;
             Session["Sobrenome"] = null;
-           
 
-            return View();
+            var eventos = db.Eventos.ToList().Where(asdfx => asdfx.ID_Evento < 5);
+            
+            return View(eventos);
         }
 
     }
