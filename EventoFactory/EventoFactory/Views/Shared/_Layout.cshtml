@@ -97,6 +97,13 @@
         <address>
             Email: contato@eventosfactory.com.br
         </address>
+        <div class="row" style="margin-top:10px" class="ciano">
+            @if (Session["Nome"] != null)
+            {
+                <h1>@Session["Nome"].ToString()  @Session["Sobrenome"].ToString()</h1>
+
+            }
+        </div>
     </footer>
 </body>
 </html>

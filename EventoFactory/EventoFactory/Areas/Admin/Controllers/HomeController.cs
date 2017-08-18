@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace EventoFactory.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class HomeController : Controller
     {
         //
