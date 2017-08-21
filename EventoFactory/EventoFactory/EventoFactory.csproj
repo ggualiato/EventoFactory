@@ -377,7 +377,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\LoginAccount\Login.cshtml" />
-    <Content Include="Views\Evento\Eventos.cshtml" />
+    <Content Include="Views\Home\Eventos.cshtml" />
     <Content Include="Areas\PortalDoUsuario\Views\Historico\Historico.cshtml" />
     <Content Include="Views\Contato\ContatoFactory.cshtml" />
     <Content Include="Views\Sobre\SobreFactory.cshtml" />
@@ -397,6 +397,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\PortalDoUsuario\Models\" />
+    <Folder Include="Views\Evento\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
