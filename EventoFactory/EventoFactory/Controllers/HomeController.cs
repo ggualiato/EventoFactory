@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using EventoFactory.Models;
 using System.Web.Security;
+using System.Net;
 
 namespace EventoFactory.Controllers
 {
@@ -22,9 +23,27 @@ namespace EventoFactory.Controllers
             Session["Nome"] = null;
             Session["Sobrenome"] = null;
 
-            var eventos = db.Eventos.ToList().Where(asdfx => asdfx.ID_Evento < 5);
+
+            var eventos = db.Eventos.ToList().Where(x => x.ID_Evento < 5);
             
             return View(eventos);
+        }
+
+        public ActionResult Evento(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Eventos evento = db.Eventos.Find(id);
+
+            if (evento == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View("Eventos", evento);
         }
 
     }

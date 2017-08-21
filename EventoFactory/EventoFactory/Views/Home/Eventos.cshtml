@@ -1,15 +1,10 @@
-﻿@{
-    ViewBag.Title = "Eventos";
-}
+﻿@model EventoFactory.Models.Eventos
 
 @{
     ViewBag.Title = "Eventos";
 }
 
-
-
 <title>Shop Item - Start Bootstrap Template</title>
-
 
 <div class="container">
 
@@ -21,14 +16,16 @@
                 <img class="img-responsive" src="http://placehold.it/800x300" alt="">
                 <div class="caption-full">
 
-                    <h4 class="text-center" id="nomeProduto">Nome do produto</h4>
+                    <h4 class="text-center" id="nomeProduto">@Html.DisplayFor(model => model.Nome)</h4>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p>@Html.DisplayFor(model => model.Descricao)</p>
+                    <p>Preço: @Html.DisplayFor(model => model.Ingressos.Preco)</p>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center" style="margin-top: 5%; margin-bottom: 5%; margin-left: 5%;">
 
                             <a href="@Url.Action("Index", "Home")">
-                                <button type="button" class="btn btn-danger" style="float: left;">Voltar</button></a>
+                                <button type="button" class="btn btn-danger" style="float: left;">Voltar</button>
+                            </a>
                             <button type="button" class="btn btn-success" style="margin-right: 18%;" data-toggle="modal" data-target=".bd-example-modal-sm">Comprar</button>
                             <!-- Aqui abre caixinha de dialogo -->
                             <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -130,37 +127,25 @@
                                                             <div class="col-md-12">
                                                                 <!-- Aqui está localizado o botão de cancelar -->
                                                                 <a href="@Url.Action("Eventos", "Evento")">
-                                                                    <button type="button" class="btn btn-warning">Cancelar</button></a> 
+                                                                    <button type="button" class="btn btn-warning">Cancelar</button>
+                                                                </a>
                                                                 <!-- Aqui está localizado o botão de confirmar compra -->
                                                                 <button type="submit" class="btn btn-info">Confirmar</button>
                                                             </div>
                                                         </div>
-
-
-
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
-
                 </div>
-
-
             </div>
-
         </div>
-
-
     </div>
-
 </div>
 
 <!-- Mascaras para os inputs do numero do cartão e do CVC, limitando o usuario a escrever só o que for necessario -->
