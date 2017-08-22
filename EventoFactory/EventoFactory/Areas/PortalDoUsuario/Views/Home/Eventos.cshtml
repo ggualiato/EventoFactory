@@ -1,5 +1,7 @@
 ﻿@model EventoFactory.Models.Eventos
 
+
+
 @{
     ViewBag.Title = "Eventos";
     Layout = "../Shared/_LayoutPortalUsuario.cshtml";
@@ -15,7 +17,9 @@
         <div class="col-md-10">
 
             <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                <span>
+                    <img width="800px" height="400px" src="data:image/jpg;base64,@(Convert.ToBase64String(@Model.Imagem))" alt=""/>
+                </span>
                 <div class="caption-full">
 
                     <h4 class="text-center" id="nomeProduto">@Html.DisplayFor(model => model.Nome)</h4>
@@ -42,8 +46,8 @@
                                                     </div>
                                                 </div>
                                                 <!-- Nome do titular -->
-                                               @using (Html.BeginForm("Evento", "Home", FormMethod.Post, new { @class = "form-horizontal" })) {
-                                                   @Html.AntiForgeryToken();
+                                                @using (Html.BeginForm("Evento", "Home", FormMethod.Post, new { @class = "form-horizontal" })) {
+                                                    @Html.AntiForgeryToken();
                                                     <div class="row">
 
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
@@ -58,7 +62,7 @@
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
                                                             <div class="glyphicon glyphicon-credit-card"></div>
                                                             <label for="numero">Numero do cartão: </label>
-                                                             <br />
+                                                            <br />
                                                             <input type="text" class="modal-content" id="numeroDoCartao" required />
                                                         </div>
                                                     </div>
@@ -113,9 +117,12 @@
                                                         <div class="row" style="margin-bottom: 15px;">
                                                             <div class="col-md-12">
                                                                 <!-- Quantidade de ingressos -->
-                                                                <label for="quantidade">Quantidade: </label>
-                                                                <input name="quantidade" id="quantidade" type="number" min="1" max="10" style="border-radius: 10px; width: 40px;" required />
+                                                                <input type="number" max="10" min="1" id="quantidade" name="quantidade" />
+                                                                <br />
+                                                                <div>
+                                                                    <input type="hidden" name="idIngresso" value="@Model.ID_Ingresso" /></div>
                                                             </div>
+
                                                         </div>
                                                         <div class="row" style="margin-bottom: 15px;">
                                                             <div class="col-md-12">

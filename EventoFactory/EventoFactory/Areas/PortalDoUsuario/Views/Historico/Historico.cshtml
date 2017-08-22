@@ -24,23 +24,23 @@
                     <tr>
                         <!-- Nome do Usuario -->
                         <td>
-                           @compras.Usuarios.Nome;
+                           @compras.Usuarios.Nome
                         </td>
                         <!-- Nome do evento-->
                         <td>
-                            @compras.Ingressos.Eventos;
+                            @compras.Ingressos.Eventos
                         </td>
                         <!-- Preço do evento -->
                         <td>
-                            @compras.Ingressos.Preco;
+                            @compras.Ingressos.Preco 
                         </td>
                         <!-- Quantidade -->
                         <td>
-                          
+                          @compras.QTD_Comprada
                         </td>
                         <!--Total-->
                         <td>
-                            @compras.Ingressos.Preco
+                            @(@compras.Ingressos.Preco * @compras.QTD_Comprada) 
                         </td>
                         <!-- Protocolo -->
                         <td>

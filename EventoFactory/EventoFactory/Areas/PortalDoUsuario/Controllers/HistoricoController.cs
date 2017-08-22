@@ -18,7 +18,7 @@ namespace EventoFactory.Areas.PortalDoUsuario.Controllers
 
         private ServidorEventoEntities db = new ServidorEventoEntities();
 
-        public ActionResult Historico()
+        public ActionResult Historico(long? id)
         {
 
             var compras = db.Compras.Include(u => u.Ingressos.Eventos);

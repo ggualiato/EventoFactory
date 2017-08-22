@@ -61,7 +61,8 @@ namespace EventoFactory.Controllers
                         /*código abaixo cria uma session para armazenar o nome do usuário*/
                         Session["Nome"] = vLogin.Nome;
                         /*código abaixo cria uma session para armazenar o sobrenome do usuário*/
-                        Session["Sobrenome"] = vLogin.Perfil;
+                        Session["ID"] = vLogin.ID_Usuario;
+                        
                         /*retorna para a tela inicial do Sobre*/
                         if (vLogin.Perfil == "administrador" || vLogin.Perfil == "Administrador")
                         {

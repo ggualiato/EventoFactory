@@ -294,3 +294,33 @@ C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory\EventoFactory\EventoFactor
 C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.csprojResolveAssemblyReference.cache
 C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.dll
 C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.pdb
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\EventoFactory.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\EventoFactory.pdb
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\Antlr3.Runtime.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\EntityFramework.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\Newtonsoft.Json.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Net.Http.Formatting.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Http.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Http.WebHost.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Mvc.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Optimization.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Providers.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Razor.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.Deployment.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.Razor.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\WebGrease.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\EntityFramework.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\Newtonsoft.Json.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Net.Http.Formatting.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Http.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Http.WebHost.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Mvc.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.Razor.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.Deployment.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\bin\System.Web.WebPages.Razor.xml
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.csprojResolveAssemblyReference.cache
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.dll
+C:\Users\RE035164\Documents\Projeto-2.0\EventoFactory - Cópia (2)\EventoFactory\EventoFactory\EventoFactory\obj\Debug\EventoFactory.pdb
