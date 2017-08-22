@@ -27,8 +27,7 @@ namespace EventoFactory.Areas.Admin.Controllers
         public ActionResult Details(int id = 0)
         {
             Locais locais = db.Locais.Find(id);
-            if (locais == null)
-            {
+            if (locais == null) {
                 return HttpNotFound();
             }
             return View(locais);
@@ -48,8 +47,7 @@ namespace EventoFactory.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Create(Locais locais)
         {
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid) {
                 db.Locais.Add(locais);
                 db.SaveChanges();
                 return RedirectToAction("Create", "AdmEventos");
@@ -57,7 +55,7 @@ namespace EventoFactory.Areas.Admin.Controllers
 
             ModelState.AddModelError("Bairro", "ERRRROUOU");
 
-            return RedirectToAction("Create", "AdmEventos");            
+            return RedirectToAction("Create", "AdmEventos");
         }
 
         //
@@ -66,8 +64,7 @@ namespace EventoFactory.Areas.Admin.Controllers
         public ActionResult Edit(int id = 0)
         {
             Locais locais = db.Locais.Find(id);
-            if (locais == null)
-            {
+            if (locais == null) {
                 return HttpNotFound();
             }
             return View(locais);
@@ -79,8 +76,7 @@ namespace EventoFactory.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(Locais locais)
         {
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid) {
                 db.Entry(locais).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -94,8 +90,7 @@ namespace EventoFactory.Areas.Admin.Controllers
         public ActionResult Delete(int? id)
         {
             Locais locais = db.Locais.Find(id);
-            if (locais == null)
-            {
+            if (locais == null) {
                 return HttpNotFound();
             }
             return View(locais);
@@ -120,8 +115,8 @@ namespace EventoFactory.Areas.Admin.Controllers
                 ViewBag.msgErro = "NÃO É POSSIVEL";
                 return RedirectToAction("Index");
             }
-            
-        } 
+
+        }
 
 
         protected override void Dispose(bool disposing)

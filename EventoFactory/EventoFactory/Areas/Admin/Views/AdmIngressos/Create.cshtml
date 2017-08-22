@@ -1,0 +1,54 @@
+﻿@model EventoFactory.Models.Ingressos
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "../Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Ingressos</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Preco)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Preco)
+            @Html.ValidationMessageFor(model => model.Preco)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantidade_Inicial)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Quantidade_Inicial)
+            @Html.ValidationMessageFor(model => model.Quantidade_Inicial)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QTD_Vendida)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QTD_Vendida)
+            @Html.ValidationMessageFor(model => model.QTD_Vendida)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Alterar Locais", "Index")
+    <br />
+    @Html.ActionLink("Voltar para criação de eventos", "Index", "AdmEventos")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

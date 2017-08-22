@@ -1,0 +1,44 @@
+﻿@model EventoFactory.Models.Ingressos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "../Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Ingressos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_Ingresso)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_Ingresso)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Preco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Preco)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantidade_Inicial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantidade_Inicial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QTD_Vendida)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QTD_Vendida)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

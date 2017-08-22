@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<EventoFactory.Models.Compras>
 
 @{
     ViewBag.Title = "Historico";
@@ -20,31 +20,31 @@
                         <th>Protocolo da compra</th>
                     </tr>
                     <!-- Lista de todas as compras feitas pelo usuario logado -->
-                    @foreach(var usuario in Model){
+                    @foreach(var compras in Model){
                     <tr>
                         <!-- Nome do Usuario -->
                         <td>
-                           
+                           @compras.Usuarios.Nome;
                         </td>
                         <!-- Nome do evento-->
                         <td>
-                         
+                            @compras.Ingressos.Eventos;
                         </td>
                         <!-- Preço do evento -->
                         <td>
-
+                            @compras.Ingressos.Preco;
                         </td>
                         <!-- Quantidade -->
                         <td>
-
+                          
                         </td>
                         <!--Total-->
                         <td>
-
+                            @compras.Ingressos.Preco
                         </td>
                         <!-- Protocolo -->
                         <td>
-
+                            @compras.ID_Compra
                         </td>
 
                     </tr>

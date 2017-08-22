@@ -46,5 +46,24 @@ namespace EventoFactory.Controllers
             return View("Eventos", evento);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Evento(Eventos evento)
+        {
+
+
+
+           
+            using (ServidorEventoEntities db = new ServidorEventoEntities()) {
+
+
+                return RedirectToAction("Historico", "PortalDoUsuario/Historico");
+
+            }
+        }
+
+
+
+
     }
 }

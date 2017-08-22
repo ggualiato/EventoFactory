@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using EventoFactory.Models;
 using System.Net;
+using System.IO;
 
 namespace EventoFactory.Areas.Admin.Controllers
 {
@@ -20,6 +21,7 @@ namespace EventoFactory.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var eventos = db.Eventos.Include(e => e.Locais);
+            eventos = db.Eventos.Include(e => e.Ingressos);
             return View(eventos.ToList());
         }
 
@@ -28,13 +30,11 @@ namespace EventoFactory.Areas.Admin.Controllers
 
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Eventos eventos = db.Eventos.Find(id);
-            if (eventos == null)
-            {
+            if (eventos == null) {
                 return HttpNotFound();
             }
 
@@ -47,6 +47,10 @@ namespace EventoFactory.Areas.Admin.Controllers
         public ActionResult Create()
         {
             ViewBag.ID_Local = new SelectList(db.Locais, "ID_Local", "Endereco");
+            ViewBag.ID_Ingresso = new SelectList(db.Ingressos, "ID_Ingresso", "ID_Ingresso");
+
+
+
             return View();
         }
 
@@ -54,21 +58,43 @@ namespace EventoFactory.Areas.Admin.Controllers
         // POST: /AdmEventos/Create
 
         [HttpPost]
-        public ActionResult Create(Eventos eventos)
+        public ActionResult Create(Eventos eventos, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid) {
+                if (file != null && file.ContentLength > 0 && (file.ContentType == "image/jpg" || file.ContentType == "image/jpeg" || file.ContentType == "image/png")) {
+
+                    int filelenght = file.ContentLength;
+
+                    byte[] imagebytes = new byte[filelenght];
+
+                    file.InputStream.Read(imagebytes, 0, filelenght);
+
+
+
+                    eventos.Imagem = imagebytes;
+
+                    // TODO Implementar método de inserção no banco
+
+                }
+
+
                 db.Eventos.Add(eventos);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+
+
             ViewBag.ID_Local = new SelectList(db.Locais, "ID_Local", "Endereco", eventos.ID_Local);
+            ViewBag.ID_Local = new SelectList(db.Locais, "ID_Ingresso", "ID_Ingresso", eventos.ID_Ingresso);
             return View(eventos);
+
+
         }
 
         [HttpPost]
-        public ActionResult CriarLocal(Locais loc) {
+        public ActionResult CriarLocal(Locais loc)
+        {
             if (ModelState.IsValid) {
                 db.Locais.Add(loc);
                 db.SaveChanges();
@@ -76,10 +102,11 @@ namespace EventoFactory.Areas.Admin.Controllers
             }
 
             ViewBag.ID_Local = new SelectList(db.Locais, "ID_Local", "Endereco", loc.ID_Local);
+            ViewBag.ID_Ingresso = new SelectList(db.Ingressos, "ID_Ingresso", "ID_Ingresso");
             return View(loc);
-        
-        
-        
+
+
+
         }
 
 
@@ -90,11 +117,11 @@ namespace EventoFactory.Areas.Admin.Controllers
         public ActionResult Edit(int? id)
         {
             Eventos eventos = db.Eventos.Find(id);
-            if (eventos == null)
-            {
+            if (eventos == null) {
                 return HttpNotFound();
             }
             ViewBag.ID_Local = new SelectList(db.Locais, "ID_Local", "Endereco", eventos.ID_Local);
+            ViewBag.ID_Ingresso = new SelectList(db.Ingressos, "ID_Ingresso", "ID_Ingresso");
             return View(eventos);
         }
 
@@ -104,13 +131,13 @@ namespace EventoFactory.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(Eventos eventos)
         {
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid) {
                 db.Entry(eventos).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.ID_Local = new SelectList(db.Locais, "ID_Local", "Endereco", eventos.ID_Local);
+            ViewBag.ID_Local = new SelectList(db.Locais, "ID_Ingresso", "ID_Ingresso", eventos.ID_Ingresso);
             return View(eventos);
         }
 
@@ -120,8 +147,7 @@ namespace EventoFactory.Areas.Admin.Controllers
         public ActionResult Delete(int? id)
         {
             Eventos eventos = db.Eventos.Find(id);
-            if (eventos == null)
-            {
+            if (eventos == null) {
                 return HttpNotFound();
             }
             return View(eventos);

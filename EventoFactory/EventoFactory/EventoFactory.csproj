@@ -127,6 +127,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdmIngressosController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\PortalDoUsuario\Controllers\ContatoController.cs" />
     <Compile Include="Areas\PortalDoUsuario\Controllers\EventoController.cs" />
@@ -278,7 +279,6 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\PortalDoUsuario\Views\Web.config" />
     <Content Include="Areas\PortalDoUsuario\Views\Home\Index.cshtml" />
-    <Content Include="Areas\PortalDoUsuario\Views\Evento\Eventos.cshtml" />
     <Content Include="Areas\PortalDoUsuario\Views\Shared\_LayoutPortalUsuario.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\PortalDoUsuario\Views\Sobre\SobreFactory.cshtml" />
@@ -300,6 +300,13 @@
       <DependentUpon>ServidorEvento.edmx</DependentUpon>
       <LastGenOutput>ServidorEvento.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\PortalDoUsuario\Views\Home\Eventos.cshtml" />
+    <Content Include="Areas\PortalDoUsuario\Views\Home\TodosEventos.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmIngressos\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmIngressos\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmIngressos\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmIngressos\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdmIngressos\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="popper\popper.js" />
     <Content Include="popper\popper.min.js" />
@@ -361,6 +368,7 @@
     <Content Include="Scripts\mdb.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\scroll.js" />
+    <Content Include="Scripts\total.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

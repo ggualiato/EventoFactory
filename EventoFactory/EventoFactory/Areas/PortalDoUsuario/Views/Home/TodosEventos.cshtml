@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EventoFactory.Models.Eventos>
+@{
+    ViewBag.Title = "TodosEventos";
+    Layout = "../Shared/_LayoutPortalUsuario.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-3 col-lg-3 col-md-3">
+                    <div class="thumbnail">
+                        <img src="~/Content/themes/base/images/banda.jpg" alt="">
+                        <div class="caption">
+                            <h4 class="pull-right">@Html.DisplayFor(modelItem => item.Ingressos.Preco)</h4>
+                            <h4>@Html.ActionLink(item.Nome, "Evento", new { id = item.ID_Evento })</h4>
+                        </div>
+                    </div>
+                </div>                
+            }
+    </div>
+</div>

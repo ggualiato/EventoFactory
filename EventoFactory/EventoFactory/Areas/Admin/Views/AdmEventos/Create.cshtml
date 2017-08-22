@@ -2,11 +2,15 @@
 
 @{
     ViewBag.Title = "Create";
+    Layout = "../Shared/_LayoutAdmin.cshtml";
 }
 
 <h2><font class="ciano">Criar Evento</font></h2>
 
-@using (Html.BeginForm()) {
+
+@using (Html.BeginForm("Create", "AdmEventos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
     @Html.ValidationSummary(true)
     <div class=" ciano">
         <fieldset>
@@ -45,12 +49,41 @@
                 @Html.DropDownList("ID_Local", String.Empty)
                 @Html.ValidationMessageFor(model => model.ID_Local)
             </div>
+            <button type="button" class="btn btn-success" style="margin-right: 18%;" data-toggle="modal"
+                data-target=".bd-example-modal-sm">@Html.ActionLink("Cadastrar Local", "Create", "AdmLocais")</button>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ID_Ingresso, "Ingressos")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("ID_Ingresso", String.Empty)
+                @Html.ValidationMessageFor(model => model.ID_Ingresso)
+            </div>
+            <button type="button" class="btn btn-success" style="margin-right: 18%;" data-toggle="modal"
+                data-target=".bd-example-modal-sm">@Html.ActionLink("Cadastrar Ingressos", "Create", "AdmIngressos")</button>
+            <div class="row">
 
-            <p>
-                <input type="submit" value="Criar" />
-            </p>
-            @Html.ActionLink("Cadastrar Local", "Create", "AdmLocais")
-            @*<button type="button" class="btn btn-success" style="margin-right: 18%;" data-toggle="modal" data-target=".bd-example-modal-sm">Cadastrar Local</button>*@
+                <div class="form-group col-sm-12">
+
+                    <label>Foto</label>
+
+                    <input type="file" name="file" id="file" accept=".jpg,.jpeg,.png" />
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+
+                <span class="glyphicon glyphicon-floppy-disk"></span>Salvar
+
+            </button>
+
+
+
+
+
+
+
         </fieldset>
     </div>
 }

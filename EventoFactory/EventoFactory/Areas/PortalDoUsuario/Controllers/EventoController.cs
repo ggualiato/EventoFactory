@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventoFactory.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,10 +11,11 @@ namespace EventoFactory.Areas.PortalDoUsuario.Controllers
     {
         //
         // GET: /Evento/
-
+        ServidorEventoEntities db = new ServidorEventoEntities();
         public ActionResult Eventos()
         {
-            return View();
+            var eventos = db.Eventos.ToList().Where(x => x.ID_Evento < 5);
+            return View(eventos);
         }
 
     }

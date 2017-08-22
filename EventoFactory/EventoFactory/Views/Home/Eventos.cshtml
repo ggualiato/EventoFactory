@@ -6,6 +6,7 @@
 
 <title>Shop Item - Start Bootstrap Template</title>
 
+
 <div class="container">
 
     <div class="row">
@@ -19,7 +20,7 @@
                     <h4 class="text-center" id="nomeProduto">@Html.DisplayFor(model => model.Nome)</h4>
 
                     <p>@Html.DisplayFor(model => model.Descricao)</p>
-                    <p>Preço: @Html.DisplayFor(model => model.Ingressos.Preco)</p>
+                    <p>Preço: <span id="preco">@Html.DisplayFor(model => model.Ingressos.Preco)</span></p>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center" style="margin-top: 5%; margin-bottom: 5%; margin-left: 5%;">
 
@@ -40,7 +41,8 @@
                                                     </div>
                                                 </div>
                                                 <!-- Nome do titular -->
-                                                <form name="pagamento" action="@Url.Action("Historico", "Historico")">
+                                                @using (Html.BeginForm("Evento", "Home", FormMethod.Post, new { @class = "form-horizontal" })) {
+                                                     @Html.AntiForgeryToken();
                                                     <div class="row">
 
                                                         <div class="col-md-12" style="margin-bottom: 15px;">
@@ -111,7 +113,7 @@
                                                             <div class="col-md-12">
                                                                 <!-- Quantidade de ingressos -->
                                                                 <label for="quantidade">Quantidade: </label>
-                                                                <input name="quantidade" type="number" min="1" max="10" style="border-radius: 10px; width: 40px;" required />
+                                                                <input name="quantidade" id="quantidade" type="number" min="1" max="10" style="border-radius: 10px; width: 40px;" required />
                                                             </div>
                                                         </div>
                                                         <div class="row" style="margin-bottom: 15px;">
@@ -119,8 +121,9 @@
                                                                 <div class="glyphicon glyphicon-piggy-bank">
                                                                 </div>
                                                                 <label for="preco">Total: R$ </label>
+
                                                                 <!-- Aqui será pegado o preço do ingresso e multiplicado pela quantidade de ingressos, expondo sempre ao usuario o novo valor -->
-                                                                <div style="color: green;">Preço</div>
+                                                                <div style="color: green; text-shadow: 0.5px 0.5px 1px;" id="total">R$ @Html.DisplayFor(model => model.Ingressos.Preco)</div>
                                                             </div>
                                                         </div>
                                                         <div class="row" style="margin-bottom: 15px;">
@@ -130,11 +133,11 @@
                                                                     <button type="button" class="btn btn-warning">Cancelar</button>
                                                                 </a>
                                                                 <!-- Aqui está localizado o botão de confirmar compra -->
-                                                                <button type="submit" class="btn btn-info">Confirmar</button>
+                                                                <button type="submit" value="acessar" class="btn btn-info">Confirmar</button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
+                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -149,6 +152,19 @@
 </div>
 
 <!-- Mascaras para os inputs do numero do cartão e do CVC, limitando o usuario a escrever só o que for necessario -->
+
+<script>
+    $(document).ready(function () {
+        $('#quantidade').on('change', function () {
+            var preco = parseFloat(@Model.Ingressos.Preco);
+            var quantidade = $(this).val();
+            var valor = preco * quantidade;
+            $('#total').text("R$ " + valor.toFixed(2));
+        });
+    })
+
+</script>
+
 @section Scripts {
     <script>
         $(document).ready(function () {

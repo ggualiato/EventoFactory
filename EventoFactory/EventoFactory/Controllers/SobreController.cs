@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace EventoFactory.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+   
     public class SobreController : Controller
     {
         //

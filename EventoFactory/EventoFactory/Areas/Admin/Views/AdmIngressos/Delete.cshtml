@@ -1,0 +1,47 @@
+﻿@model EventoFactory.Models.Ingressos
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "../Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Ingressos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_Ingresso)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_Ingresso)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Preco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Preco)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantidade_Inicial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantidade_Inicial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QTD_Vendida)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QTD_Vendida)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
